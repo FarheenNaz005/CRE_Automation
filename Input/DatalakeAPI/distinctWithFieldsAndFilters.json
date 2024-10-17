@@ -1,0 +1,30 @@
+{
+    "filters": [
+        {
+            "datasource": [
+                "FHA",
+                "Ginnie Mae"
+            ]
+        },
+        {
+            "curmonaged": {
+                "min": "600",
+                "max": "700"
+            }
+        },
+        {
+            "originationyear": {
+                "min": "1960"
+            }
+        }
+    ],
+    "fields": [{
+        "field_name": "datasource"
+    }, {
+        "field_name": "masterpropidtrepp"
+    }, {
+        "field_name": "city"
+    }, {
+        "field_name": "curdscr"
+    }]
+}

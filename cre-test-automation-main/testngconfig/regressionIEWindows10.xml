@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Test_Scenarios" verbose="3" parallel="tests" thread-count="1">
+     	<parameter name="Execute" value="cloud" />
+		<parameter name="remoteurl" value="https://yogendrabinmile:yBEQc6HUFnciunDo8LoeHMKUDi5Gq7TczhjFsNAIZYxqh2sihq@hub.lambdatest.com/wd/hub" />
+		<parameter name="inputsheet" value="Datasheet_Production.xls"/>
+ 	
+ 	<test name="HomePage Validation" preserveorder="true">
+		<parameter name="capabilities" value="browserName:ie;platform:Windows 10;version:11.0;name:Home Page Validation;build:CRE Regression;console:true;resolution:1440x900"/>
+    	<classes>
+    		<parameter name="ParameterNValue" value="InputDataRow=>2"/>
+      		<class name="com.newdemo.steps.LogInTest"/>	
+      		<class name="com.newdemo.steps.CREHomePage"/>
+      		<class name="com.newdemo.steps.LogOutTest"/>
+   		</classes>
+ 	</test> 
+ 	<test name="Search and Data Load Verify" preserveorder="true">
+		<parameter name="capabilities" value="browserName:ie;platform:Windows 10;version:11.0;name:Property Page Load Verification;build:CRE Regression;console:true;resolution:1440x900"/>
+    	<classes>
+    		<parameter name="ParameterNValue" value="InputDataRow=>2"/>
+      		<class name="com.newdemo.steps.LogInTest"/>	
+      		<class name="com.newdemo.steps.PropertyPageFunctionality"/>
+      		<class name="com.newdemo.steps.LogOutTest"/>
+   		</classes>
+ 	</test>
+ 	<!-- <test name="Portfolio Functionality Verify" preserveorder="true">
+		<parameter name="capabilities" value="browserName:ie;platform:Windows 10;version:11.0;name:Portfolio Functionality Verify;build:CRE Regression;console:true;resolution:1440x900"/>
+    	<classes>
+    		<parameter name="ParameterNValue" value="InputDataRow=>2"/>
+      		<class name="com.newdemo.steps.LogInTest"/>	
+      		<class name="com.newdemo.steps.CREsmallsearchnportfolio"/>
+      		<class name="com.newdemo.steps.CREpropertyEvaluation"/>
+      		<class name="com.newdemo.steps.ManagePortfolioFunctionality"/>
+      		<class name="com.newdemo.steps.LogOutTest"/>
+   		</classes>
+ 	</test>
+ 	<test name="verify CRE Listing Page Functionality" preserveorder="true">
+		<parameter name="capabilities" value="browserName:ie;platform:Windows 10;version:11.0;name:verify CRE Listing Page Functionality;build:CRE Regression;console:true;resolution:1440x900"/>
+    	<classes>
+    		<parameter name="ParameterNValue" value="InputDataRow=>2"/>
+      		<class name="com.newdemo.steps.LogInTest"/>
+      		<class name="com.newdemo.steps.CREListingFunctionality"/>
+      		<class name="com.newdemo.steps.LogOutTest"/>
+   		</classes>
+ 	</test>
+ 	<test name="verify CRE Deal List Functionality" preserveorder="true">
+		<parameter name="capabilities" value="browserName:ie;platform:Windows 10;version:11.0;name:verify CRE Deal List Functionality;build:CRE Regression;console:true;resolution:1440x900"/>
+    	<classes>
+    		<parameter name="ParameterNValue" value="InputDataRow=>2"/>
+      		<class name="com.newdemo.steps.LogInTest"/>
+      		<class name="com.newdemo.steps.DealListFunctionality"/>
+      		<class name="com.newdemo.steps.LogOutTest"/>
+   		</classes>
+ 	</test>
+ 	<test name="verify CRE Alert Functionality" preserveorder="true">
+		<parameter name="capabilities" value="browserName:ie;platform:Windows 10;version:11.0;name:verify CRE Alert Functionality;build:CRE Regression;console:true;resolution:1440x900"/>
+    	<classes>
+    		<parameter name="ParameterNValue" value="InputDataRow=>2"/>
+      		<class name="com.newdemo.steps.LogInTest"/>
+      		<class name="com.newdemo.steps.AlertFunctionality"/>
+      		<class name="com.newdemo.steps.LogOutTest"/>
+   		</classes>
+ 	</test>
+ 	
+ 	<test name="Verify Company Exposure, Hotel and Tenant Report" preserveorder="true">
+		<parameter name="capabilities"
+			value="browserName:ie;platform:Windows 10;version:11.0;name:Verify Company Exposure, Hotel and Tenant Report;build:CRE Regression;console:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>2" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.StatsPageTest" />
+			<class name="com.newdemo.steps.CompanyExposureTest" />
+			<class name="com.newdemo.steps.HotelSnapshotTest" />
+			<class name="com.newdemo.steps.TenantReportTest" />
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test> -->
+ 	
+ 	
+ 	<listeners>
+       <listener class-name="com.newdemo.framework.listner.TestResultListener" />
+   </listeners>
+ </suite>

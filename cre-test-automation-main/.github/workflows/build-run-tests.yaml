@@ -1,0 +1,92 @@
+name: CRE Production Synthetic Checks
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  build_run_tests:
+    runs-on: ubuntu-latest
+    env:
+      TARGET_ENV: "production"
+    concurrency:
+      group: ${{ github.workflow }}/${{ github.ref_name }}
+      cancel-in-progress: true
+    steps:
+    - uses: actions/checkout@v3
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+          aws-access-key-id: ${{ secrets.DEPLOY_MODERN_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.DEPLOY_MODERN_AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: ${{ secrets.DEPLOY_MODERN_AWS_ROLE_TO_ASSUME }}
+          role-external-id: ${{ secrets.DEPLOY_MODERN_AWS_ROLE_EXTERNAL_ID }}
+          role-duration-seconds: 1200
+          aws-region: us-east-1
+
+    - name: Set aws credentials file
+      run: |
+          mkdir ~/.aws
+          > ~/.aws/credentials
+          cat <<EOF >> ~/.aws/credentials
+          [prodservices]
+          aws_access_key_id=${{ env.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key=${{ env.AWS_SECRET_ACCESS_KEY }}
+          aws_session_token=${{ env.AWS_SESSION_TOKEN }}
+          EOF
+    - name: Login to Amazon ECR
+      id:   login-ecr
+      uses: aws-actions/amazon-ecr-login@v1   
+
+    - name: Build, tag, and push docker image
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        ECR_REPOSITORY: trepp/cre/qa-automation
+        IMAGE_TAG: ${{ env.TARGET_ENV }}_${{ github.sha }}
+        OPSGENIE_API_TOKEN: ${{ secrets.API_TOKEN_GLOBAL_OPSGENIE }}
+      run: |
+        docker build --build-arg OPSGENIE_API_TOKEN=$OPSGENIE_API_TOKEN -t $ECR_REPOSITORY:$IMAGE_TAG .
+        docker tag $ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+  
+
+    - name: Check out IaC codebase
+      uses: actions/checkout@v3
+      with:
+        repository: Trepp/artemis
+        path: artemis
+        token: ${{ secrets.GH_SHAREDLIB_PAT }}
+
+    - name: Install tfenv
+      run: |
+          git clone https://github.com/tfutils/tfenv.git ~/.tfenv
+          echo "$HOME/.tfenv/bin" >> $GITHUB_PATH
+      
+    - name: Install Terraform
+      working-directory: artemis/applications/twl/cre/qa-automation
+      run: |
+          tfenv install
+          tfenv use
+      
+    - name: Configure git URLs
+        # Rewrite ssh git URLs to https to allow using PAT when checking out terraform modules from private Trepp repo
+      run: |
+          git config --global url."https://oauth2:${{ secrets.GH_SHAREDLIB_PAT }}@github.com".insteadOf ssh://git@github.com       
+    
+    - name: Run terraform init & apply
+      working-directory: artemis/applications/twl/cre/qa-automation
+      env:
+       IMAGE_TAG: ${{ env.TARGET_ENV }}_${{ github.sha }}
+      run: |
+          terraform --version
+          terraform init
+          terraform workspace select ${{ env.TARGET_ENV }}
+          terraform apply -var-file ${{ env.TARGET_ENV }}.tfvars -var image_tag=$IMAGE_TAG -auto-approve
+    - name: Slack Notification       
+      uses: 8398a7/action-slack@v3
+      with:
+       channel : cre_automated_testing
+       status: ${{ job.status }}
+       fields: workflow,job,commit,repo,ref,author,took
+      env:
+         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      if: always()

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Test_Scenarios">
+	<parameter name="browser" value="chrome" />
+	<parameter name="remoteurl" value=""/>
+	
+  	<test name="test" preserveorder="true">
+    	<classes>
+      		<class name="com.bdd.test.RuncukeTest"/>
+   		</classes>
+ 	</test>
+ 	<parameter name="TriggerEmail" value="Y" />
+ 	<listeners>
+	  <listener class-name="atu.testng.reports.listeners.ATUReportsListener"></listener>
+	  <listener class-name="atu.testng.reports.listeners.ConfigurationListener"></listener>
+	  <listener class-name="atu.testng.reports.listeners.MethodListener"></listener>
+  	</listeners>
+</suite>

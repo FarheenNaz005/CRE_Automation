@@ -1,0 +1,12 @@
+{
+    "filters": [
+        {
+            "bloombergname": "FHMS",
+            "search_type": "fuzzy"
+        }
+    ],
+    "limit": 10,
+    "offset": 1,
+    "sort": {"underwriter": "desc"}
+    
+}

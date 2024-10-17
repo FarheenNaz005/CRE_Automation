@@ -1,0 +1,54 @@
+name: CRE-Staging-Regression-via-HyperExecute-Test
+on:
+  schedule:
+    - cron: '0 22 * * *'
+  workflow_dispatch:
+#     inputs:
+#       username: 
+#        required: true
+#        description: LT Username
+#        default:
+#       accessKey: 
+#        description: LT Access Key
+#        required: true
+#        default: 
+#       sampleRepoLink:
+#         description: Link to the project repository
+#         default: https://github.com/Trepp/dm-test-automation
+#         required: true
+jobs:
+  HyperExecute-Selenium-Java:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v3
+
+      - name: Starting CLI testing
+        shell: bash
+        run: |
+         
+          echo "STEP----> Downloading CLI and setting up environment variables for hyperexecute"
+              
+              curl -O https://downloads.lambdatest.com/hyperexecute/linux/hyperexecute
+              chmod u+x hyperexecute
+              export LT_USERNAME=pritam.singh
+              export LT_ACCESS_KEY=gvmhoviicYdnh0P3LuKx2ZdtCHxyfD8zJuYn4ajWwM2owZ5mKq 
+              echo $LT_USERNAME 
+              echo $LT_ACCESS_KEY
+              ./hyperexecute --user $LT_USERNAME --key $LT_ACCESS_KEY --config hyperexecute.yaml
+      
+      - name: Slack Notification
+        uses: 8398a7/action-slack@v3
+        with:
+         channel : cre-general
+         status: ${{ job.status }}
+         fields: workflow,job,eventName,took
+        env:
+           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+        if: always()

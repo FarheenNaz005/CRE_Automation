@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Test_Scenarios" verbose="3" parallel="tests"
+	thread-count="1">
+	<parameter name="Execute" value="cloud" />
+	<parameter name="remoteurl"
+		value="https://yogendrabinmile:yBEQc6HUFnciunDo8LoeHMKUDi5Gq7TczhjFsNAIZYxqh2sihq@hub.lambdatest.com/wd/hub" />
+	<parameter name="inputsheet" value="Datasheet_Production.xls" />
+
+	<test name="HomePage Validation" preserveorder="true">
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:80.0;name:Home Page Validation;build:CRE Sanity Check;console:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>2" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.CREHomePage" />
+			<class name="com.newdemo.steps.PropertyPageFunctionality">
+				<methods>
+					<include name="SearchandData" />
+				</methods>
+			</class>
+			<class name="com.newdemo.steps.CREsmallsearchnportfolio">
+				<methods>
+					<include name="creatportfolio" />
+					<include name="searchNaddPortfolio" />
+				</methods>
+			</class>
+			<class name="com.newdemo.steps.ManagePortfolioFunctionality">
+				<methods>
+					<include name="verify1Portfolio"/>
+					<include name="verify7PortfolioDelete"/>
+				</methods>
+			</class>
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test>
+	
+	<listeners>
+		<listener class-name="com.newdemo.framework.listner.TestResultListener" />
+	</listeners>
+</suite>

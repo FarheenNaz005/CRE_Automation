@@ -1,0 +1,76 @@
+{
+  "filters": [
+    {
+      "state": [
+        "NY"
+      ],
+      "search_type": "fuzzy"
+    },
+    {
+      "curbal": {
+        "min": 1
+      }
+    },
+    {
+      "derivedmaturityyear": {
+        "min": 2021,
+        "max": 2050
+      }
+    },
+    {
+      "originationyear": {
+        "min": 1991,
+        "max": 2021
+      }
+    },
+    {
+      "remterm": {
+        "min": 20,
+        "max": 100
+      }
+    },
+    {
+      "curdlqcode": [
+        "0",
+        "1",
+        "2"
+      ]
+    },
+    {
+      "citystate": [
+        "New York, NY"
+      ]
+    },
+    {
+      "countystate": [
+        "New York, NY"
+      ]
+    },
+    {
+      "datasource": [
+        "CMBS",
+        "Fannie Mae",
+        "Freddie Mac",
+        "Ginnie Mae",
+        "FHA",
+        "CRE CLO"
+      ]
+    },
+    {
+      "defeasstatnx": [
+        "NX"
+      ]
+    },
+    {
+      "proptypecode": [
+        "OF"
+      ]
+    }
+  ],
+  "sort": {
+    "curbal": "desc"
+  },
+  "limit": 100,
+  "offset": 1,
+  "exclude_fields": ["allocbalpct", "coupontype"]
+}

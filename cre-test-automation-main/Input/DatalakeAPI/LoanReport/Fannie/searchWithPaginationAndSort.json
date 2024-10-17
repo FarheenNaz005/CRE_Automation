@@ -1,0 +1,12 @@
+{
+     "filters": [
+        {
+            "propertyvalue":{"min":799999}
+        }
+    ],
+    "sort": {
+        "propertyvalue": "asc"
+    },
+    "offset" :1,
+    "limit": 10
+}

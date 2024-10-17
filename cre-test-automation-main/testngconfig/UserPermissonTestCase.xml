@@ -1,0 +1,43 @@
+<suite name="Test_Scenarios" verbose="3" parallel="tests"
+	thread-count="1">
+	<parameter name="Execute" value="local" />
+	<parameter name="remoteurl"
+		value="https://anish_ohri:ke0cNdOipKNVGKK6fZpNaRS2mZgWV8Yq8RB8N1HSODZBfEro1g@hub.lambdatest.com/wd/hub" />
+	<parameter name="environment" value="stag" />
+	<parameter name="application" value="CRE" />
+	<parameter name="opsgenieAlert" value="No" />
+
+	<test name="verify compass table are showing those user have permission  " preserveorder="true">
+			<parameter name="capabilities"
+				value="browserName:chrome;platform:Windows 10;version:80.0;name:Home Page Validation;build:CRE Regression Staging;console:true;resolution:1440x900" />
+			<classes>
+				<parameter name="ParameterNValue" value="InputDataRow=>5" />
+				<class name="com.newdemo.steps.LogInTest" />
+				<class name="com.newdemo.steps.UserPermissionTestCases">
+				<methods>
+				<include name="verifyCompassIsShowingWithPermisson"/>
+				</methods>
+				</class>
+				<class name="com.newdemo.steps.LogOutTest" />
+			</classes>
+		</test>
+		<test name="verify compass table are not showing those user have not permission  " preserveorder="true">
+			<groups>
+				<dependencies>
+					<group name="regression" depends-on="logInTest" />
+				</dependencies>
+			</groups>
+			<parameter name="capabilities"
+				value="browserName:chrome;platform:Windows 10;version:80.0;name:Home Page Validation;build:CRE Regression Staging;console:true;resolution:1440x900" />
+			<classes>
+				<parameter name="ParameterNValue" value="InputDataRow=>6" />
+				<class name="com.newdemo.steps.LogInTest" />
+				<class name="com.newdemo.steps.UserPermissionTestCases">
+				<methods>
+				<include name="verifyCompassIsNotShowing"/>
+				</methods>
+				</class>
+				<class name="com.newdemo.steps.LogOutTest" />
+			</classes>
+		</test>
+</suite>

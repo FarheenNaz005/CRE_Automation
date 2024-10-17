@@ -1,0 +1,85 @@
+<suite name="Test_Scenarios" verbose="3" parallel="tests"
+	thread-count="1">
+	<parameter name="Execute" value="cloud" />
+	<parameter name="remoteurl"
+		value="https://anish_ohri:ke0cNdOipKNVGKK6fZpNaRS2mZgWV8Yq8RB8N1HSODZBfEro1g@hub.lambdatest.com/wd/hub" />
+	<parameter name="environment" value="Alpha" />
+
+	<test name="HomePage Validation" preserveorder="true">
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:80.0;name:Home Page Validation;build:CRE Sanity Check Alpha;console:true;tunnel:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>2" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.CREHomePage" />
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test>
+	<test name="Search and Data Load Verify" preserveorder="true">
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:80.0;name:Search and Data Load Verify;build:CRE Sanity Check Alpha;console:true;tunnel:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>2" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.PropertyPageFunctionality">
+				<methods>
+					<include name="SearchandData" />
+				</methods>
+			</class>
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test>
+	<test name="Search and Add Portfolio Verify" preserveorder="true">
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:80.0;name:Search and Add Portfolio Verify;build:CRE Sanity Check Alpha;console:true;tunnel:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>2" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.CREsmallsearchnportfolio">
+				<methods>
+					<exclude name="verify4DeleteRecords" />
+				</methods>
+			</class>
+			<class name="com.newdemo.steps.CRECommentaryFunctionality" />
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test>
+	<test name="Portfolio Evaluation verify" preserveorder="true">
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:80.0;name:Portfolio Evaluation verify;build:CRE Sanity Check Alpha;console:true;tunnel:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>2" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.CREpropertyEvaluation" />
+			<class name="com.newdemo.steps.ManagePortfolioFunctionality">
+				<methods>
+					<include name="verify1Portfolio" />
+					<include name="verify7PortfolioDelete" />
+				</methods>
+			</class>
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test>
+
+	<test name="verify CRE Listing Page Functionality"
+		preserveorder="true">
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:80.0;name:verify CRE Listing Page Functionality;build:CRE Sanity Check Alpha;console:true;tunnel:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>2" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.CREListingFunctionality">
+				<methods>
+					<include name="verifyButtonVisibility" />
+					<include name="verifyDownloadLoanListing" />
+				</methods>
+			</class>
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test>
+
+	<listeners>
+		<listener
+			class-name="com.newdemo.framework.listner.TestResultListener" />
+	</listeners>
+</suite>

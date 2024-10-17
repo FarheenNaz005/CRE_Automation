@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="DL API Test" verbose="3" parallel="tests" thread-count="1">
+
+
+	<parameter name="BaseUrl" value="https://api-qa.trepp.com/v2.0" />
+	<test name="OAuth" preserveorder="true">
+		<classes>
+			<!-- <class name="com.newdemo.steps.DLAPIOAuth" />-->
+			<class name="com.newdemo.steps.CacheBuilder" />
+		</classes>
+	</test>
+</suite>

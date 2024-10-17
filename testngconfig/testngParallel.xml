@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Test_Scenarios" verbose="3" parallel="tests" thread-count="2">
+     	<parameter name="Execute" value="local" />
+		<parameter name="remoteurl" value="https://anish_ohri:ke0cNdOipKNVGKK6fZpNaRS2mZgWV8Yq8RB8N1HSODZBfEro1g@hub.lambdatest.com/wd/hub" />
+		<parameter name="inputsheet" value="Datasheet_Production.xls"/>
+ 	
+ 	<test name="LoginWindowsChrome" preserveorder="true">
+		<parameter name="capabilities" value="browserName:chrome;platform:Windows 10;version:79.0;tunnel:true;name:LoginWindowsChrome;build:CRE HOME Page;resolution:1440x900"></parameter>
+	    	<classes>
+	    		<parameter name="ParameterNValue" value="InputDataRow=>2"/>
+	      		<class name="com.newdemo.steps.logInTest"/>	
+	      		<class name="com.newdemo.steps.CREHomePage"/>
+	   		</classes>
+ 	</test>
+
+	<test name="LoginChrome 78" preserveorder="true">
+	  	<parameter name="capabilities" value="browserName:chrome;platform:Windows 10;version:78.0;tunnel:true;name:LoginChrome 78;build:CRE HOME Page;resolution:1440x900"></parameter>
+	    	<classes>
+    		<parameter name="ParameterNValue" value="InputDataRow=>2"/>
+      		<class name="com.newdemo.steps.logInTest"/>	
+      		<class name="com.newdemo.steps.CREpropertyEvaluation"/>
+   		</classes>
+ 	</test>
+ 	
+<!--  		<test name="LoginChrome 77" preserveorder="true"> -->
+<!--   	<parameter name="Execute" value="cloud" /> -->
+<!-- 	<parameter name="browser" value="chrome" /> -->
+<!-- 	<parameter name="remoteurl" value="https://anish_ohri:ke0cNdOipKNVGKK6fZpNaRS2mZgWV8Yq8RB8N1HSODZBfEro1g@hub.lambdatest.com/wd/hub" /> -->
+<!-- 	<parameter name="inputsheet" value="Datasheet_Production.xls"/> -->
+<!-- 	<parameter name="capabilities" value="platform:Windows 10;version:77.0;tunnel:true;TestName:;buildName:CRE HOME Page;screenSize:1440x900"></parameter> -->
+<!--     	<classes> -->
+<!--     	<parameter name="ParameterNValue" value="InputDataRow=>2"/> -->
+<!--       		<class name="com.newdemo.steps.logInTest"/>	 -->
+<!--       				<class name="com.newdemo.steps.CREHomePage"/> -->
+<!--    		</classes> -->
+<!--  	</test> -->
+ 	
+<!--  		<test name="LoginChrome 76" preserveorder="true"> -->
+<!--   	<parameter name="Execute" value="cloud" /> -->
+<!-- 	<parameter name="browser" value="chrome" /> -->
+<!-- 	<parameter name="remoteurl" value="https://anish_ohri:ke0cNdOipKNVGKK6fZpNaRS2mZgWV8Yq8RB8N1HSODZBfEro1g@hub.lambdatest.com/wd/hub" /> -->
+<!-- 	<parameter name="inputsheet" value="Datasheet_Production.xls"/> -->
+<!-- 	<parameter name="capabilities" value="platform:Windows 10;version:76.0;tunnel:true;TestName:;buildName:CRE HOME Page;screenSize:1440x900"></parameter> -->
+<!--     	<classes> -->
+<!--     	<parameter name="ParameterNValue" value="InputDataRow=>2"/> -->
+<!--       		<class name="com.newdemo.steps.logInTest"/>	 -->
+<!--       				<class name="com.newdemo.steps.CREHomePage"/> -->
+<!--    		</classes> -->
+<!--  	</test> -->
+ 	
+<!--  	<test name="LoginMacChrome" preserveorder="true"> -->
+<!--   	<parameter name="Execute" value="cloud" /> -->
+<!-- 	<parameter name="browser" value="chrome" /> -->
+<!-- 	<parameter name="remoteurl" value="https://anish_ohri:ke0cNdOipKNVGKK6fZpNaRS2mZgWV8Yq8RB8N1HSODZBfEro1g@hub.lambdatest.com/wd/hub" /> -->
+<!-- 	<parameter name="inputsheet" value="Datasheet_Production.xls"/> -->
+<!-- 	<parameter name="capabilities" value="platform:MacOS Catalina;version:79.0;tunnel:true;TestName:;buildName:CRE HOME Page;screenSize:1440x900"></parameter> -->
+<!--     	<classes> -->
+<!--     	<parameter name="ParameterNValue" value="InputDataRow=>2"/> -->
+<!--       		<class name="com.newdemo.steps.logInTest"/>	 -->
+<!--       				<class name="com.newdemo.steps.CREHomePage"/> -->
+<!--    		</classes> -->
+<!--  	</test> -->
+ 	
+
+ 	<!-- <listeners>
+	  <listener class-name="atu.testng.reports.listeners.ATUReportsListener"></listener>
+	  <listener class-name="atu.testng.reports.listeners.ConfigurationListener"></listener>
+	  <listener class-name="atu.testng.reports.listeners.MethodListener"></listener>
+  	</listeners> -->
+ 	
+ 	
+</suite>

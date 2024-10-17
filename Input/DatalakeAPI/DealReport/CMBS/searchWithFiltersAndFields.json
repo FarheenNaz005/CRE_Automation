@@ -1,0 +1,14 @@
+{
+   "filters": [{
+       "underwriter": "JP Morgan"
+   },
+   {
+            "issuer": ["FREMF", "HFX"]
+        }
+   ],
+   "offset": 2,
+   "limit": 100,
+   "sort": {"curdistribdt": "desc"},
+   "fields": ["dealname", "bloombergname", "underwriter", "businessdaytype",
+   "dealcategory", "staticpool"]
+}

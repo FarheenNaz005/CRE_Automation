@@ -1,0 +1,11 @@
+{
+    "filters": [
+         {
+            "cusip": ["368306AC0", "61746WDK3"]
+        }
+    ],
+    "sort": {"curdistribdt": "desc"},
+    "fields": ["bondid", "bondtype", "cusip", "dealid"],
+    "offset" :1,
+    "limit": 10
+}

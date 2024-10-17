@@ -1,0 +1,16 @@
+{
+  "filters" : [ {
+    "closedt" : {
+      "max" : "2022-12-13"
+    }
+  } ],
+  "fields" : [ {
+    "field_name" : "underwriter"
+  }, {
+    "field_name" : "dealcategory"
+  }, {
+    "field_name" : "seciopct"
+  }, {
+    "field_name" : "staticpool"
+  } ]
+}

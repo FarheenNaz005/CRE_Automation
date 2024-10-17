@@ -1,0 +1,24 @@
+<suite name="Test_Scenarios" verbose="3" parallel="tests"
+	thread-count="1">
+	<parameter name="Execute" value="cloud" />
+	<parameter name="remoteurl"
+		value="https://anish_ohri:ke0cNdOipKNVGKK6fZpNaRS2mZgWV8Yq8RB8N1HSODZBfEro1g@hub.lambdatest.com/wd/hub" />
+	<parameter name="environment" value="Production" />
+	<parameter name="application" value="CRE" />
+	<parameter name="opsgenieAlert" value="No" />
+
+	<test name="HomePage Validation" preserveorder="true">
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:80.0;name:Home Page Validation;build:CRE Sanity Check;console:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>2" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.PropertyDetailPageTest" >
+				<methods>
+					<include name="verify3TimeTakenByPropertyDetailPage" />
+				</methods>
+			</class>
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test>
+</suite>

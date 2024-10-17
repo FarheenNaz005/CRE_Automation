@@ -1,0 +1,28 @@
+version: 0.1
+globalTimeout: 100
+testSuiteTimeout: 150
+testSuiteStep: 150
+retryOnFailure: true
+maxRetries: 1
+
+runtime:
+  language: java
+  version: 17
+runson: win
+debug: false
+autosplit: true
+concurrency: 5
+generateArtifactAfterEveryStage: true
+testDiscovery:
+  type: raw
+  mode: static
+  command: grep 'test name' testngconfig/regressionTestStaging.xml | awk '{print$2}' | sed 's/name=//g' | sed 's/\x3e//g'
+
+
+testRunnerCommand: mvn clean test `-DselectedTests=$test `-Dmaven.repo.local=./.m2 dependency:resolve `-DExectionPlatform="cloud" `-DsuiteXmlFile=regressionTestStaging.xml -U -P Hyperexecute
+
+pre:
+  - mvn -Dmaven.repo.local=./.m2 dependency:resolve
+cacheKey: '{{ checksum "pom.xml" }}'
+cacheDirectories:
+  - .m2

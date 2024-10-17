@@ -1,0 +1,25 @@
+{
+  "filters" : [ {
+    "becdr" : {
+      "min" : "50000",
+      "max" : "100000"
+    }
+  }, {
+    "bhtotalcash" : {
+      "min" : "1400"
+    }
+  }, {
+    "curnominalbondbal" : {
+      "max" : 44000
+    }
+  } ],
+  "fields" : [ {
+    "field_name" : "bhlossperincomplete"
+  }, {
+    "field_name" : "bondtype"
+  }, {
+    "field_name" : "denomcurrency"
+  }, {
+    "field_name" : "floaterindex"
+  } ]
+}

@@ -1,0 +1,17 @@
+{
+    "filters": [
+        {
+            "propname": "The",
+            "search_type": "fuzzy"
+        },
+        {
+            "address": "The",
+            "search_type": "fuzzy"
+        },
+        {
+            "balpersqftorunit": null
+        }
+    ],
+    "offset": 1,
+    "limit": "10"
+}

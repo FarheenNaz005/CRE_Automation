@@ -1,0 +1,1588 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "match": {
+      "type": "integer"
+    },
+    "total": {
+      "type": "integer"
+    },
+    "offset": {
+      "type": "integer"
+    },
+    "offsets": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "dl_timestamp": {
+              "type": "string"
+            },
+            "dltimestamp": {
+              "type": "string"
+            },
+            "datasource": {
+              "type": "string"
+            },
+            "loanuniversepropid": {
+              "type": "string"
+            },
+            "loanuniverseloanid": {
+              "type": "string"
+            },
+            "lupropid_rowcount": {
+              "type": "integer"
+            },
+            "lupropidrowcount": {
+              "type": "integer"
+            },
+            "loanid": {
+              "type": "null"
+            },
+            "propid": {
+              "type": "null"
+            },
+            "dealid": {
+              "type": "null"
+            },
+            "masterpropidtrepp": {
+              "type": "null"
+            },
+            "masterloanidtrepp": {
+              "type": "null"
+            },
+            "address": {
+              "type": "string"
+            },
+            "allocbalpct": {
+              "type": "integer"
+            },
+            "city": {
+              "type": "string"
+            },
+            "county": {
+              "type": "string"
+            },
+            "curdscr": {
+              "type": "null"
+            },
+            "curltv": {
+              "type": "null"
+            },
+            "dscrasof": {
+              "type": "null"
+            },
+            "expresdt": {
+              "type": "null"
+            },
+            "msa": {
+              "type": "integer"
+            },
+            "numunits": {
+              "type": "integer"
+            },
+            "occrate": {
+              "type": "null"
+            },
+            "propname": {
+              "type": "string"
+            },
+            "proptypecode": {
+              "type": "string"
+            },
+            "proptypenorm": {
+              "type": "null"
+            },
+            "secltv": {
+              "type": "null"
+            },
+            "secsqft": {
+              "type": "null"
+            },
+            "state": {
+              "type": "string"
+            },
+            "yearbuilt": {
+              "type": "null"
+            },
+            "yrrenov": {
+              "type": "null"
+            },
+            "zip": {
+              "type": "string"
+            },
+            "latitude": {
+              "type": [ "number","null"]
+            },
+            "longitude": {
+              "type": [ "number" ,"null"]
+            },
+            "occdt": {
+              "type": "null"
+            },
+            "pctexp13to24mon": {
+              "type": "null"
+            },
+            "pctexp1to12mon": {
+              "type": "null"
+            },
+            "pctexp25to36mon": {
+              "type": "null"
+            },
+            "pctexp37to48mon": {
+              "type": "null"
+            },
+            "pctexp49to60mon": {
+              "type": "null"
+            },
+            "secncfdscr": {
+              "type": "null"
+            },
+            "secnoidscr": {
+              "type": "null"
+            },
+            "secoccupancyrate": {
+              "type": "null"
+            },
+            "balpersqft": {
+              "type": "null"
+            },
+            "balpersqftorunit": {
+              "type": "number"
+            },
+            "balperunit": {
+              "type": "number"
+            },
+            "msaname": {
+              "type": "null"
+            },
+            "notename": {
+              "type": "null"
+            },
+            "priorfyncfchange": {
+              "type": "null"
+            },
+            "priorfynoichange": {
+              "type": "null"
+            },
+            "seccurleaseexpdt1": {
+              "type": "null"
+            },
+            "seccurleaseexpdt2": {
+              "type": "null"
+            },
+            "seccurleaseexpdt3": {
+              "type": "null"
+            },
+            "seccurleaseexpdt4": {
+              "type": "null"
+            },
+            "seccurleaseexpdt5": {
+              "type": "null"
+            },
+            "seccurleasepct1": {
+              "type": "null"
+            },
+            "seccurleasepct2": {
+              "type": "null"
+            },
+            "seccurleasepct3": {
+              "type": "null"
+            },
+            "seccurleasepct4": {
+              "type": "null"
+            },
+            "seccurleasepct5": {
+              "type": "null"
+            },
+            "seccurlessee1": {
+              "type": "null"
+            },
+            "seccurlessee2": {
+              "type": "null"
+            },
+            "seccurlessee3": {
+              "type": "null"
+            },
+            "seccurlessee4": {
+              "type": "null"
+            },
+            "seccurlessee5": {
+              "type": "null"
+            },
+            "sqfootage1": {
+              "type": "null"
+            },
+            "sqfootage2": {
+              "type": "null"
+            },
+            "sqfootage3": {
+              "type": "null"
+            },
+            "sqfootage4": {
+              "type": "null"
+            },
+            "sqfootage5": {
+              "type": "null"
+            },
+            "sqftnounits": {
+              "type": "integer"
+            },
+            "sqftnounitsfromsubject": {
+              "type": "integer"
+            },
+            "amortterm": {
+              "type": "null"
+            },
+            "appreddttrustee": {
+              "type": "null"
+            },
+            "cumaser": {
+              "type": "null"
+            },
+            "curamorttype": {
+              "type": "null"
+            },
+            "curbankruptcydt": {
+              "type": "null"
+            },
+            "curcpn": {
+              "type": "number"
+            },
+            "curdlqcode": {
+              "type": "string"
+            },
+            "curloanbal": {
+              "type": "integer"
+            },
+            "curmasterservreturndt": {
+              "type": "null"
+            },
+            "curmonaged": {
+              "type": "integer"
+            },
+            "curmonlock": {
+              "type": "null"
+            },
+            "curmonmaturity": {
+              "type": "integer"
+            },
+            "curmonpp": {
+              "type": "null"
+            },
+            "curmonymc": {
+              "type": "null"
+            },
+            "curreodt": {
+              "type": "null"
+            },
+            "curspecservtransdt": {
+              "type": "null"
+            },
+            "daycountmethod": {
+              "type": "null"
+            },
+            "defeasstatus": {
+              "type": "null"
+            },
+            "ioperiods": {
+              "type": "null"
+            },
+            "maturitydt": {
+              "type": "string"
+            },
+            "mraser": {
+              "type": "null"
+            },
+            "numprops": {
+              "type": "integer"
+            },
+            "originationdt": {
+              "type": "string"
+            },
+            "originator": {
+              "type": "string"
+            },
+            "origterm": {
+              "type": "integer"
+            },
+            "paidthrudt": {
+              "type": "string"
+            },
+            "poolnum": {
+              "type": "string"
+            },
+            "prepaydesc": {
+              "type": "string"
+            },
+            "rateindex": {
+              "type": "null"
+            },
+            "ratemargin": {
+              "type": "null"
+            },
+            "remterm": {
+              "type": "integer"
+            },
+            "secloanbal": {
+              "type": "integer"
+            },
+            "totalotheradv": {
+              "type": "null"
+            },
+            "totalpiadv": {
+              "type": "null"
+            },
+            "totaltiadv": {
+              "type": "null"
+            },
+            "workoutcode": {
+              "type": "null"
+            },
+            "appvalue": {
+              "type": "null"
+            },
+            "appvaluedt": {
+              "type": "null"
+            },
+            "loanmodcode": {
+              "type": "null"
+            },
+            "ncfdscr": {
+              "type": "null"
+            },
+            "noidscr": {
+              "type": "null"
+            },
+            "origborrowername": {
+              "type": "null"
+            },
+            "prepaypenalty": {
+              "type": "null"
+            },
+            "coupontype": {
+              "type": "null"
+            },
+            "cumaccrunpdadvint": {
+              "type": "null"
+            },
+            "defeasableremaintofirst": {
+              "type": "null"
+            },
+            "dlqtot12mons": {
+              "type": "null"
+            },
+            "dlqtotall": {
+              "type": "null"
+            },
+            "extoption1": {
+              "type": "null"
+            },
+            "extoption2": {
+              "type": "null"
+            },
+            "extoption3": {
+              "type": "null"
+            },
+            "extoption4": {
+              "type": "null"
+            },
+            "extoption5": {
+              "type": "null"
+            },
+            "guarantor": {
+              "type": "null"
+            },
+            "noieffdt": {
+              "type": "null"
+            },
+            "numnotes": {
+              "type": "null"
+            },
+            "perpastmaturity": {
+              "type": "null"
+            },
+            "prepaypenaltyamt_1p": {
+              "type": "null"
+            },
+            "prepaypenaltyamt1p": {
+              "type": "null"
+            },
+            "watchlistdt": {
+              "type": "null"
+            },
+            "affiliatedsponsors": {
+              "type": "null"
+            },
+            "fullyextendedmatdt": {
+              "type": "null"
+            },
+            "loanmoddesctrepp": {
+              "type": "null"
+            },
+            "loanpiecesexist": {
+              "type": "string"
+            },
+            "loanpurpose": {
+              "type": "string"
+            },
+            "proformaattainedloan": {
+              "type": "null"
+            },
+            "proformaflagloan": {
+              "type": "null"
+            },
+            "secdebtyieldncfnew": {
+              "type": "null"
+            },
+            "secdebtyieldnoinew": {
+              "type": "null"
+            },
+            "seller": {
+              "type": "string"
+            },
+            "cumulativewodra": {
+              "type": "null"
+            },
+            "loanmodifiedexecutiondt": {
+              "type": "null"
+            },
+            "speclservicertransferreason": {
+              "type": "null"
+            },
+            "correctedstatus": {
+              "type": "null"
+            },
+            "defeasstatnx": {
+              "type": "string"
+            },
+            "derivedloanstatus": {
+              "type": "string"
+            },
+            "extensiontype": {
+              "type": "null"
+            },
+            "impliedcapratencf": {
+              "type": "null"
+            },
+            "impliedcapratenoi": {
+              "type": "null"
+            },
+            "loanmodderiveddt": {
+              "type": "null"
+            },
+            "loanmodderivedstatus": {
+              "type": "null"
+            },
+            "loanspecialservicer": {
+              "type": "null"
+            },
+            "loanspecialservicercontact": {
+              "type": "null"
+            },
+            "loanspecialservicerphone": {
+              "type": "null"
+            },
+            "maturitymodeldt": {
+              "type": "null"
+            },
+            "maturitymodelyear": {
+              "type": "null"
+            },
+            "modderivedloanmoddesc": {
+              "type": "null"
+            },
+            "modelfirstopendt": {
+              "type": "null"
+            },
+            "modprepaypenamt": {
+              "type": "null"
+            },
+            "modprepaypenpct": {
+              "type": "null"
+            },
+            "newlydq": {
+              "type": "string"
+            },
+            "prepaycategory": {
+              "type": "string"
+            },
+            "specservstatus": {
+              "type": "string"
+            },
+            "totalexposure": {
+              "type": "integer"
+            },
+            "totremextperiods": {
+              "type": "null"
+            },
+            "vacancyrate": {
+              "type": "null"
+            },
+            "watchliststatus": {
+              "type": "string"
+            },
+            "curncfdebtyield": {
+              "type": "null"
+            },
+            "curnoidebtyield": {
+              "type": "null"
+            },
+            "newlyspecserv": {
+              "type": "string"
+            },
+            "newlywatchlist": {
+              "type": "string"
+            },
+            "greenprogram": {
+              "type": "null"
+            },
+            "greencertifications": {
+              "type": "null"
+            },
+            "bloombergname": {
+              "type": "null"
+            },
+            "dealtype": {
+              "type": "string"
+            },
+            "privtype": {
+              "type": "string"
+            },
+            "qtrlyvintage": {
+              "type": "null"
+            },
+            "curbal": {
+              "type": "integer"
+            },
+            "secbal": {
+              "type": "integer"
+            },
+            "originationyear": {
+              "type": "integer"
+            },
+            "loanname": {
+              "type": "string"
+            },
+           
+            "apprvalperunit": {
+              "type": "null"
+            },
+            "splitcross": {
+              "type": "null"
+            },
+            "splitdate": {
+              "type": "null"
+            },
+            "splitreason": {
+              "type": "null"
+            },
+            "specservstatusstrats": {
+              "type": "string"
+            },
+            "ismultiproperty": {
+              "type": "string"
+            },
+            "appred_n": {
+              "type": "null"
+            },
+            "appredn": {
+              "type": "null"
+            },
+            "estdefeasance": {
+              "type": "null"
+            },
+            "noieffdtstrat": {
+              "type": "null"
+            },
+            "securitizationyear": {
+              "type": "null"
+            },
+            "loanmodifiedbookdt": {
+              "type": "null"
+            },
+            "dealname": {
+              "type": "null"
+            },
+            "mrapprval": {
+              "type": "null"
+            },
+            "mrapprdt": {
+              "type": "null"
+            },
+            "curnetcpn": {
+              "type": "null"
+            },
+            "ncfasof": {
+              "type": "null"
+            },
+            "noiasof": {
+              "type": "null"
+            },
+            "secbalpersqftorunit": {
+              "type": "number"
+            },
+            "secapprvalpersqftorunit": {
+              "type": "null"
+            },
+            "hasloanfeaturepdf": {
+              "type": "boolean"
+            },
+            "formattedapn": {
+              "type": "null"
+            },
+            "ownermailaddress": {
+              "type": "null"
+            },
+            "ownermailcity": {
+              "type": "null"
+            },
+            "ownermailstate": {
+              "type": "null"
+            },
+            "ownermailzip": {
+              "type": "null"
+            },
+            "ownername1": {
+              "type": "null"
+            },
+            "recordingdate": {
+              "type": "null"
+            },
+            "salecode": {
+              "type": "null"
+            },
+            "saledate": {
+              "type": "null"
+            },
+            "saleprice": {
+              "type": "null"
+            },
+            "salesdeedcategorytype": {
+              "type": "null"
+            },
+            "sellername": {
+              "type": "null"
+            },
+            "dispdt": {
+              "type": "null"
+            },
+            "disptypecd": {
+              "type": "string"
+            },
+            "lastpaidthrudt": {
+              "type": "null"
+            },
+            "lossamt": {
+              "type": "null"
+            },
+            "losspct": {
+              "type": "null"
+            },
+            "monthstorecover": {
+              "type": "null"
+            },
+            "paidoffamt": {
+              "type": "null"
+            },
+            "penaltypct": {
+              "type": "null"
+            },
+            "region": {
+              "type": "string"
+            },
+            "proformatype": {
+              "type": "null"
+            },
+            "secltvasis": {
+              "type": "null"
+            },
+            "secncfdscrasis": {
+              "type": "null"
+            },
+            "loanliquidationreport": {
+              "type": "null"
+            },
+            "reoliquidationreport": {
+              "type": "null"
+            },
+            "propertysubtype": {
+              "type": "string"
+            },
+            "anchortype": {
+              "type": "null"
+            },
+            "shoppingcenterformat": {
+              "type": "null"
+            },
+            "grocertype": {
+              "type": "null"
+            },
+            "singletenantflag": {
+              "type": "null"
+            },
+            "hotelid": {
+              "type": "null"
+            },
+            "hotelbrand": {
+              "type": "null"
+            },
+            "hotelflagfranchise": {
+              "type": "null"
+            },
+            "grocerwarehouseflag": {
+              "type": "null"
+            },
+            "courierwarehouseflag": {
+              "type": "null"
+            },
+            "airportlocationflag": {
+              "type": "null"
+            },
+            "submarket": {
+              "type": "null"
+            },
+            "normalizedlessee1": {
+              "type": "null"
+            },
+            "normalizedlessee2": {
+              "type": "null"
+            },
+            "normalizedlessee3": {
+              "type": "null"
+            },
+            "normalizedlessee4": {
+              "type": "null"
+            },
+            "normalizedlessee5": {
+              "type": "null"
+            },
+            "revenupersqft": {
+              "type": "null"
+            },
+            "revenupersqftorunit": {
+              "type": "null"
+            },
+            "revenuperunit": {
+              "type": "null"
+            },
+            "expensepersqft": {
+              "type": "null"
+            },
+            "expensepersqftorunit": {
+              "type": "null"
+            },
+            "expenseperunit": {
+              "type": "null"
+            },
+            "noipersqft": {
+              "type": "null"
+            },
+            "noipersqftorunit": {
+              "type": "null"
+            },
+            "noiperunit": {
+              "type": "null"
+            },
+            "ncfpersqft": {
+              "type": "null"
+            },
+            "ncfpersqftorunit": {
+              "type": "null"
+            },
+            "ncfperunit": {
+              "type": "null"
+            },
+            "revenues": {
+              "type": "null"
+            },
+            "expenses": {
+              "type": "null"
+            },
+            "noi": {
+              "type": "null"
+            },
+            "ncf": {
+              "type": "null"
+            },
+            "geocode": {
+              "type": ["string","null"]
+            },
+            "operatingstatementsflag": {
+              "type": "boolean"
+            },
+            "derivedmaturitydt": {
+              "type": "string"
+            },
+            "derivedmaturityyear": {
+              "type": "integer"
+            },
+            "disptypecdwithcurrent": {
+              "type": "string"
+            },
+            "pinid": {
+              "type": [ "string","null"]
+            },
+            "standardizedcity": {
+              "type": ["string","null"]
+            },
+            "benchmarkswapindex": {
+              "type": "integer"
+            },
+            "benchmarkswaprate": {
+              "type": "number"
+            },
+            "estimatedspreadtoswap": {
+              "type": "number"
+            },
+            "benchmarktsyindex": {
+              "type": "string"
+            },
+            "benchmarktsyrate": {
+              "type": "number"
+            },
+            "estimatedspreadtotsy": {
+              "type": "number"
+            },
+            "estimatedswapratepct": {
+              "type": "number"
+            },
+            "pinidcount": {
+              "type": "integer"
+            },
+            "assessmentyear": {
+              "type": "null"
+            },
+            "totalassessedvalue": {
+              "type": "null"
+            },
+            "impliedcapratesecnoi": {
+              "type": "null"
+            },
+            "impliedcapratesecncf": {
+              "type": "null"
+            },
+            "censustract": {
+              "type": "null"
+            },
+            "inqoz": {
+              "type": "null"
+            },
+            "liqproceeds": {
+              "type": "null"
+            },
+            "liqexpense": {
+              "type": "null"
+            },
+            "liqsalesprice": {
+              "type": "null"
+            },
+            "category": {
+              "type": "string"
+            },
+            "loaddt": {
+              "type": "string"
+            },
+            "fhahierarchy": {
+              "type": "string"
+            },
+            "fhaloanstatus": {
+              "type": "null"
+            },
+            "fhamasterid": {
+              "type": "string"
+            },
+            "fhanumber": {
+              "type": "string"
+            },
+            "programcat": {
+              "type": "string"
+            },
+            "soa_category": {
+              "type": "null"
+            },
+            "soacategory": {
+              "type": "null"
+            },
+            "updatedt": {
+              "type": "string"
+            },
+            "realestatetaxes": {
+              "type": "null"
+            },
+            "expensepct": {
+              "type": "null"
+            },
+            "dealpct": {
+              "type": "integer"
+            },
+            "loanpurposeraw": {
+              "type": "null"
+            },
+            "fanniepropertyid": {
+              "type": "null"
+            },
+            "rmspropertytrafficlightscore": {
+              "type": ["integer","null"]
+            },
+            "compstakpropertyid": {
+              "type": "null"
+            },
+            "compstakmarketresultstransactionsize": {
+              "type": "null"
+            },
+            "compstakmarketresultsfreemonths": {
+              "type": "null"
+            },
+            "compstakmarketresultsstartingrent": {
+              "type": "null"
+            },
+            "compstakmarketresultseffectiverent": {
+              "type": "null"
+            },
+            "compstakmarketresultsworkvalue": {
+              "type": "null"
+            },
+            "compstakmarketresultsleaseterm": {
+              "type": "null"
+            },
+            "compstaksubmarketresultstransactionsize": {
+              "type": "null"
+            },
+            "compstaksubmarketresultsfreemonths": {
+              "type": "null"
+            },
+            "compstaksubmarketresultsstartingrent": {
+              "type": "null"
+            },
+            "compstaksubmarketresultseffectiverent": {
+              "type": "null"
+            },
+            "compstaksubmarketresultsworkvalue": {
+              "type": "null"
+            },
+            "compstaksubmarketresultsleaseterm": {
+              "type": "null"
+            },
+            "compstakaddressid": {
+              "type": "null"
+            },
+            "compstakmarket": {
+              "type": "null"
+            },
+            "compstaksubmarket": {
+              "type": "null"
+            },
+            "compstakdate": {
+              "type": "null"
+            },
+            "countystate": {
+              "type": "string"
+            },
+            "citystate": {
+              "type": ["string","null" ]
+            },
+            "propaddress": {
+              "type": ["string","null"]
+            },
+            "rmsbitrafficlightscore": {
+              "type": ["integer","null"]
+            },
+            "relatedrecordscount": {
+              "type": "integer"
+            },
+            "treppderiveddlqstatus": {
+              "type": "string"
+            },
+            "mappintype": {
+              "type": "string"
+            },
+            "mrrevenue": {
+              "type": "null"
+            },
+            "mropexpense": {
+              "type": "null"
+            },
+            "mrnoi": {
+              "type": "null"
+            },
+            "mrncf": {
+              "type": "null"
+            },
+            "mrphysicaloccupancy": {
+              "type": "null"
+            },
+            "mrstartasofdt": {
+              "type": "null"
+            },
+            "mrendasofdt": {
+              "type": "null"
+            },
+            "priorrevenue": {
+              "type": "null"
+            },
+            "prioropexpense": {
+              "type": "null"
+            },
+            "priornoi": {
+              "type": "null"
+            },
+            "priorncf": {
+              "type": "null"
+            },
+            "priorphyoccupancy": {
+              "type": "null"
+            },
+            "priorasofdt": {
+              "type": "null"
+            },
+            "prior2revenue": {
+              "type": "null"
+            },
+            "prior2opexpense": {
+              "type": "null"
+            },
+            "prior2noi": {
+              "type": "null"
+            },
+            "prior2ncf": {
+              "type": "null"
+            },
+            "prior2phyoccupancy": {
+              "type": "null"
+            },
+            "prior2asofdt": {
+              "type": "null"
+            },
+            "uweffectivegrossincome": {
+              "type": "null"
+            },
+            "uwtotalopexpense": {
+              "type": "null"
+            },
+            "uwnoi": {
+              "type": "null"
+            },
+            "uwncf": {
+              "type": "null"
+            },
+            "physicaloccupancypct": {
+              "type": "null"
+            },
+            "loanprepayenddt": {
+              "type": ["null","string"]
+            },
+            "originterestrate": {
+              "type": "null"
+            },
+            "mrfinind": {
+              "type": "null"
+            },
+            "initialfixedterm": {
+              "type": "null"
+            },
+            "currentnoterate": {
+              "type": "null"
+            },
+            "issuancenoteratepct": {
+              "type": "null"
+            },
+            "prior3revenue": {
+              "type": "null"
+            },
+            "prior3opexpense": {
+              "type": "null"
+            },
+            "prior3noi": {
+              "type": "null"
+            },
+            "prior3ncf": {
+              "type": "null"
+            },
+            "prior3physicaloccupancy": {
+              "type": "null"
+            },
+            "prior3enddt": {
+              "type": "null"
+            },
+            "lcomm_period": {
+              "type": "null"
+            },
+            "lcommperiod": {
+              "type": "null"
+            },
+            "lcomm_commentary": {
+              "type": "null"
+            },
+            "lcommcommentary": {
+              "type": "null"
+            },
+            "lcomm_commenttype": {
+              "type": "null"
+            },
+            "lcommcommenttype": {
+              "type": "null"
+            },
+            "treppservicercommentarystatus": {
+              "type": "null"
+            },
+            "ownercity": {
+              "type": "null"
+            },
+            "ownercompanyname": {
+              "type": "null"
+            },
+            "owneremail": {
+              "type": "null"
+            },
+            "ownerfacebook": {
+              "type": "null"
+            },
+            "ownerlinkedin": {
+              "type": "null"
+            },
+            "ownername": {
+              "type": "null"
+            },
+            "ownerphone1": {
+              "type": "null"
+            },
+            "ownerphone2": {
+              "type": "null"
+            },
+            "ownerstate": {
+              "type": "null"
+            },
+            "ownerstreetaddress": {
+              "type": "null"
+            },
+            "ownerunitnumber": {
+              "type": "null"
+            },
+            "ownerunittype": {
+              "type": "null"
+            },
+            "ownerzip": {
+              "type": "null"
+            },
+            "curschedprin": {
+              "type": "null"
+            },
+            "curschedint": {
+              "type": "null"
+            },
+            "sku": {
+              "type": "string"
+            },
+            "geocoordinate": {
+              "type": [ "string","null"]
+            }
+          },
+          "required": [
+            "dl_timestamp",
+            "dltimestamp",
+            "datasource",
+            "loanuniversepropid",
+            "loanuniverseloanid",
+            "lupropid_rowcount",
+            "lupropidrowcount",
+            "loanid",
+            "propid",
+            "dealid",
+            "masterpropidtrepp",
+            "masterloanidtrepp",
+            "address",
+            "allocbalpct",
+            "city",
+            "county",
+            "curdscr",
+            "curltv",
+            "dscrasof",
+            "expresdt",
+            "msa",
+            "numunits",
+            "occrate",
+            "propname",
+            "proptypecode",
+            "proptypenorm",
+            "secltv",
+            "secsqft",
+            "state",
+            "yearbuilt",
+            "yrrenov",
+            "zip",
+            "latitude",
+            "longitude",
+            "occdt",
+            "pctexp13to24mon",
+            "pctexp1to12mon",
+            "pctexp25to36mon",
+            "pctexp37to48mon",
+            "pctexp49to60mon",
+            "secncfdscr",
+            "secnoidscr",
+            "secoccupancyrate",
+            "balpersqft",
+            "balpersqftorunit",
+            "balperunit",
+            "msaname",
+            "notename",
+            "priorfyncfchange",
+            "priorfynoichange",
+            "seccurleaseexpdt1",
+            "seccurleaseexpdt2",
+            "seccurleaseexpdt3",
+            "seccurleaseexpdt4",
+            "seccurleaseexpdt5",
+            "seccurleasepct1",
+            "seccurleasepct2",
+            "seccurleasepct3",
+            "seccurleasepct4",
+            "seccurleasepct5",
+            "seccurlessee1",
+            "seccurlessee2",
+            "seccurlessee3",
+            "seccurlessee4",
+            "seccurlessee5",
+            "sqfootage1",
+            "sqfootage2",
+            "sqfootage3",
+            "sqfootage4",
+            "sqfootage5",
+            "sqftnounits",
+            "sqftnounitsfromsubject",
+            "amortterm",
+            "appreddttrustee",
+            "cumaser",
+            "curamorttype",
+            "curbankruptcydt",
+            "curcpn",
+            "curdlqcode",
+            "curloanbal",
+            "curmasterservreturndt",
+            "curmonaged",
+            "curmonlock",
+            "curmonmaturity",
+            "curmonpp",
+            "curmonymc",
+            "curreodt",
+            "curspecservtransdt",
+            "daycountmethod",
+            "defeasstatus",
+            "ioperiods",
+            "maturitydt",
+            "mraser",
+            "numprops",
+            "originationdt",
+            "originator",
+            "origterm",
+            "paidthrudt",
+            "poolnum",
+            "prepaydesc",
+            "rateindex",
+            "ratemargin",
+            "remterm",
+            "secloanbal",
+            "totalotheradv",
+            "totalpiadv",
+            "totaltiadv",
+            "workoutcode",
+            "appvalue",
+            "appvaluedt",
+            "loanmodcode",
+            "ncfdscr",
+            "noidscr",
+            "origborrowername",
+            "prepaypenalty",
+            "coupontype",
+            "cumaccrunpdadvint",
+            "defeasableremaintofirst",
+            "dlqtot12mons",
+            "dlqtotall",
+            "extoption1",
+            "extoption2",
+            "extoption3",
+            "extoption4",
+            "extoption5",
+            "guarantor",
+            "noieffdt",
+            "numnotes",
+            "perpastmaturity",
+            "prepaypenaltyamt_1p",
+            "prepaypenaltyamt1p",
+            "watchlistdt",
+            "affiliatedsponsors",
+            "fullyextendedmatdt",
+            "loanmoddesctrepp",
+            "loanpiecesexist",
+            "loanpurpose",
+            "proformaattainedloan",
+            "proformaflagloan",
+            "secdebtyieldncfnew",
+            "secdebtyieldnoinew",
+            "seller",
+            "cumulativewodra",
+            "loanmodifiedexecutiondt",
+            "speclservicertransferreason",
+            "correctedstatus",
+            "defeasstatnx",
+            "derivedloanstatus",
+            "extensiontype",
+            "impliedcapratencf",
+            "impliedcapratenoi",
+            "loanmodderiveddt",
+            "loanmodderivedstatus",
+            "loanspecialservicer",
+            "loanspecialservicercontact",
+            "loanspecialservicerphone",
+            "maturitymodeldt",
+            "maturitymodelyear",
+            "modderivedloanmoddesc",
+            "modelfirstopendt",
+            "modprepaypenamt",
+            "modprepaypenpct",
+            "newlydq",
+            "prepaycategory",
+            "specservstatus",
+            "totalexposure",
+            "totremextperiods",
+            "vacancyrate",
+            "watchliststatus",
+            "curncfdebtyield",
+            "curnoidebtyield",
+            "newlyspecserv",
+            "newlywatchlist",
+            "greenprogram",
+            "greencertifications",
+            "bloombergname",
+            "dealtype",
+            "privtype",
+            "qtrlyvintage",
+            "curbal",
+            "secbal",
+            "originationyear",
+            "loanname",
+            "apprvalpersqftorunit",
+            "apprvalpersqft",
+            "apprvalperunit",
+            "splitcross",
+            "splitdate",
+            "splitreason",
+            "specservstatusstrats",
+            "ismultiproperty",
+            "appred_n",
+            "appredn",
+            "estdefeasance",
+            "noieffdtstrat",
+            "securitizationyear",
+            "loanmodifiedbookdt",
+            "dealname",
+            "mrapprval",
+            "mrapprdt",
+            "curnetcpn",
+            "ncfasof",
+            "noiasof",
+            "secbalpersqftorunit",
+            "secapprvalpersqftorunit",
+            "hasloanfeaturepdf",
+            "formattedapn",
+            "ownermailaddress",
+            "ownermailcity",
+            "ownermailstate",
+            "ownermailzip",
+            "ownername1",
+            "recordingdate",
+            "salecode",
+            "saledate",
+            "saleprice",
+            "salesdeedcategorytype",
+            "sellername",
+            "dispdt",
+            "disptypecd",
+            "lastpaidthrudt",
+            "lossamt",
+            "losspct",
+            "monthstorecover",
+            "paidoffamt",
+            "penaltypct",
+            "region",
+            "proformatype",
+            "secltvasis",
+            "secncfdscrasis",
+            "loanliquidationreport",
+            "reoliquidationreport",
+            "propertysubtype",
+            "anchortype",
+            "shoppingcenterformat",
+            "grocertype",
+            "singletenantflag",
+            "hotelid",
+            "hotelbrand",
+            "hotelflagfranchise",
+            "grocerwarehouseflag",
+            "courierwarehouseflag",
+            "airportlocationflag",
+            "submarket",
+            "normalizedlessee1",
+            "normalizedlessee2",
+            "normalizedlessee3",
+            "normalizedlessee4",
+            "normalizedlessee5",
+            "revenupersqft",
+            "revenupersqftorunit",
+            "revenuperunit",
+            "expensepersqft",
+            "expensepersqftorunit",
+            "expenseperunit",
+            "noipersqft",
+            "noipersqftorunit",
+            "noiperunit",
+            "ncfpersqft",
+            "ncfpersqftorunit",
+            "ncfperunit",
+            "revenues",
+            "expenses",
+            "noi",
+            "ncf",
+            "geocode",
+            "operatingstatementsflag",
+            "derivedmaturitydt",
+            "derivedmaturityyear",
+            "disptypecdwithcurrent",
+            "pinid",
+            "standardizedcity",
+            "benchmarkswapindex",
+            "benchmarkswaprate",
+            "estimatedspreadtoswap",
+            "benchmarktsyindex",
+            "benchmarktsyrate",
+            "estimatedspreadtotsy",
+            "estimatedswapratepct",
+            "pinidcount",
+            "assessmentyear",
+            "totalassessedvalue",
+            "impliedcapratesecnoi",
+            "impliedcapratesecncf",
+            "censustract",
+            "inqoz",
+            "liqproceeds",
+            "liqexpense",
+            "liqsalesprice",
+            "category",
+            "loaddt",
+            "fhahierarchy",
+            "fhaloanstatus",
+            "fhamasterid",
+            "fhanumber",
+            "programcat",
+            "soa_category",
+            "soacategory",
+            "updatedt",
+            "realestatetaxes",
+            "expensepct",
+            "dealpct",
+            "loanpurposeraw",
+            "fanniepropertyid",
+            "rmspropertytrafficlightscore",
+            "compstakpropertyid",
+            "compstakmarketresultstransactionsize",
+            "compstakmarketresultsfreemonths",
+            "compstakmarketresultsstartingrent",
+            "compstakmarketresultseffectiverent",
+            "compstakmarketresultsworkvalue",
+            "compstakmarketresultsleaseterm",
+            "compstaksubmarketresultstransactionsize",
+            "compstaksubmarketresultsfreemonths",
+            "compstaksubmarketresultsstartingrent",
+            "compstaksubmarketresultseffectiverent",
+            "compstaksubmarketresultsworkvalue",
+            "compstaksubmarketresultsleaseterm",
+            "compstakaddressid",
+            "compstakmarket",
+            "compstaksubmarket",
+            "compstakdate",
+            "countystate",
+            "citystate",
+            "propaddress",
+            "rmsbitrafficlightscore",
+            "relatedrecordscount",
+            "treppderiveddlqstatus",
+            "mappintype",
+            "mrrevenue",
+            "mropexpense",
+            "mrnoi",
+            "mrncf",
+            "mrphysicaloccupancy",
+            "mrstartasofdt",
+            "mrendasofdt",
+            "priorrevenue",
+            "prioropexpense",
+            "priornoi",
+            "priorncf",
+            "priorphyoccupancy",
+            "priorasofdt",
+            "prior2revenue",
+            "prior2opexpense",
+            "prior2noi",
+            "prior2ncf",
+            "prior2phyoccupancy",
+            "prior2asofdt",
+            "uweffectivegrossincome",
+            "uwtotalopexpense",
+            "uwnoi",
+            "uwncf",
+            "physicaloccupancypct",
+            "loanprepayenddt",
+            "originterestrate",
+            "mrfinind",
+            "initialfixedterm",
+            "currentnoterate",
+            "issuancenoteratepct",
+            "prior3revenue",
+            "prior3opexpense",
+            "prior3noi",
+            "prior3ncf",
+            "prior3physicaloccupancy",
+            "prior3enddt",
+            "lcomm_period",
+            "lcommperiod",
+            "lcomm_commentary",
+            "lcommcommentary",
+            "lcomm_commenttype",
+            "lcommcommenttype",
+            "treppservicercommentarystatus",
+            "ownercity",
+            "ownercompanyname",
+            "owneremail",
+            "ownerfacebook",
+            "ownerlinkedin",
+            "ownername",
+            "ownerphone1",
+            "ownerphone2",
+            "ownerstate",
+            "ownerstreetaddress",
+            "ownerunitnumber",
+            "ownerunittype",
+            "ownerzip",
+            "curschedprin",
+            "curschedint",
+            "sku",
+            "geocoordinate"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "match",
+    "total",
+    "offset",
+    "offsets",
+    "data"
+  ]
+}

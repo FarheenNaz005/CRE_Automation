@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Test_Scenarios" verbose="3" parallel="false" thread-count="1">
+	<parameter name="browser" value="cloudTestingfirefoxWindows" />
+	<parameter name="remoteurl" value="" />
+	<parameter name="inputsheet" value="Datasheet_Production.xls"/>
+	
+
+  	<test name="Login" preserveorder="true">
+    	<classes>
+    	<parameter name="ParameterNValue" value="InputDataRow=>2"/>
+      		<class name="com.newdemo.steps.logInTest"/>
+   		</classes>
+ 	</test>
+ 	
+ 		<test name="CMBSHomePage" preserveorder="true">
+    	<classes>
+    	<parameter name="ParameterNValue" value="InputDataRow=>2"/>
+      		<class name="com.newdemo.steps.CMBSPortfolioCalculator"/>
+   		</classes>
+ 	</test>
+ 	
+
+ 	<listeners>
+	  <listener class-name="atu.testng.reports.listeners.ATUReportsListener"></listener>
+	  <listener class-name="atu.testng.reports.listeners.ConfigurationListener"></listener>
+	  <listener class-name="atu.testng.reports.listeners.MethodListener"></listener>
+  	</listeners>
+</suite>

@@ -1,0 +1,11 @@
+{
+    "filters": [
+         {
+            "cusip": "36192",
+            "search_type": "fuzzy"
+        }
+    ],
+    "limit": 10,
+    "offset": 1,
+    "sort": {"curdistribdt": "desc"}
+}

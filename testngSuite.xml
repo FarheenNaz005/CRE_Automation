@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="ContainerSuitesCombined">
+ <suite-files>
+    <suite-file path="testng.xml" />
+    <suite-file path="testngCloudChrome.xml" />
+     <suite-file path="testngCloudFirefox.xml" />
+
+ </suite-files>
+
+      <listeners>
+      <listener class-name="atu.testng.reports.listeners.ATUReportsListener"></listener>
+      <listener class-name="atu.testng.reports.listeners.ConfigurationListener"></listener>
+      <listener class-name="atu.testng.reports.listeners.MethodListener"></listener>
+      </listeners>
+</suite>
+
+
+

@@ -1,0 +1,1403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.2.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="host" elementType="Argument">
+            <stringProp name="Argument.name">host</stringProp>
+            <stringProp name="Argument.value">${__P(hostname,apps.trepp.com)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+            <stringProp name="Argument.desc">apps-demo.trepp.com</stringProp>
+          </elementProp>
+          <elementProp name="scheme" elementType="Argument">
+            <stringProp name="Argument.name">scheme</stringProp>
+            <stringProp name="Argument.value">https</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <stringProp name="HTTPSampler.domain">https://apps.trepp.com/</stringProp>
+        <stringProp name="HTTPSampler.port"></stringProp>
+        <stringProp name="HTTPSampler.protocol">https</stringProp>
+        <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+        <stringProp name="HTTPSampler.path"></stringProp>
+        <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+        <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+        <stringProp name="HTTPSampler.response_timeout"></stringProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Auth" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <longProp name="ThreadGroup.start_time">1370726934000</longProp>
+        <longProp name="ThreadGroup.end_time">1370726934000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="TestPlan.comments">Do Auth0 authentication and save cokkies for other thread groups to use</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Authentication" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;client_id&quot;:&quot;li2xmbgwFhPRjjzbYZiOYLIKFVretlMl&quot;,&quot;username&quot;:&quot;yogendra@binmile.com&quot;,&quot;password&quot;:&quot;Trepp@0123&quot;,&quot;realm&quot;:&quot;apps&quot;,&quot;credential_type&quot;:&quot;http://auth0.com/oauth/grant-type/password-realm&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">trepp-apps.auth0.com</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/co/authenticate</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">${scheme}://apps.trepp.com/loginPortal/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">${scheme}://apps.trepp.com</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Auth0-Client" elementType="Header">
+                <stringProp name="Header.name">Auth0-Client</stringProp>
+                <stringProp name="Header.value">eyJuYW1lIjoibG9jay5qcyIsInZlcnNpb24iOiIxMS4xLjIiLCJsaWJfdmVyc2lvbiI6IjkuMS4yIn0=</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">login_ticket</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">login_ticket</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="false">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">log.info(vars.get(&quot;login_ticket&quot;));</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get acces token" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="client_id" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">client_id</stringProp>
+                <stringProp name="Argument.value">li2xmbgwFhPRjjzbYZiOYLIKFVretlMl</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="response_type" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">response_type</stringProp>
+                <stringProp name="Argument.value">token</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="response_mode" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">response_mode</stringProp>
+                <stringProp name="Argument.value">fragment</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="redirect_uri" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">redirect_uri</stringProp>
+                <stringProp name="Argument.value">${scheme}://apps.trepp.com/loginPortal/</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="connection" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">connection</stringProp>
+                <stringProp name="Argument.value">apps</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="state" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">state</stringProp>
+                <stringProp name="Argument.value">eyJzdGF0ZU5vbmNlIjoib1BkSWFVcmwtaSJ9</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="device" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">device</stringProp>
+                <stringProp name="Argument.value">apps.trepp.com|8a27d0d0e193b8c5068a5ceda90268f5+ec92bd1a1e0e0b4e2979e709a161c3ae46b3cc92d14837eee05dc2da6d991f51</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="scope" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">scope</stringProp>
+                <stringProp name="Argument.value">openid email</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="realm" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">realm</stringProp>
+                <stringProp name="Argument.value">apps</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="login_ticket" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">login_ticket</stringProp>
+                <stringProp name="Argument.value">${login_ticket}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="auth0Client" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">auth0Client</stringProp>
+                <stringProp name="Argument.value">eyJuYW1lIjoibG9jay5qcyIsInZlcnNpb24iOiIxMS4xLjIiLCJsaWJfdmVyc2lvbiI6IjkuMS4yIn0=</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">trepp-apps.auth0.com</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/authorize</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">${scheme}://apps.trepp.com/loginPortal/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">URL</stringProp>
+            <stringProp name="RegexExtractor.refname">access_token</stringProp>
+            <stringProp name="RegexExtractor.regex">access_token=(.*)&amp;scope</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default"></stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get SSO Live cookie" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;access_token&quot;:&quot;${access_token}&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/wsapi/loginPortalUser/login</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">${scheme}://apps.trepp.com/loginPortal/?code=WKuv28A1eVyQtxn6&amp;state=QXI4LlJYNm9ZX2VodUdmbkZ3TzQ4UDFmWkVSb1NpMzUyb2oxMzlBQVgzZA%3D%3D</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">${scheme}://apps.trepp.com</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="GET search ID" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;criteria&quot;:{&quot;curBal&quot;:{&quot;min&quot;:1},&quot;defeasStatNX&quot;:[&quot;NX&quot;],&quot;dataSource&quot;:[&quot;CMBS&quot;,&quot;Fannie Mae&quot;,&quot;Freddie Mac&quot;,&quot;Ginnie Mae&quot;,&quot;FHA&quot;,&quot;CRE CLO&quot;],&quot;state&quot;:[&quot;NY&quot;],&quot;propTypeCode&quot;:[&quot;RT&quot;,&quot;OF&quot;,&quot;IN&quot;,&quot;WH&quot;,&quot;MF&quot;,&quot;LO&quot;,&quot;HC&quot;,&quot;SS&quot;,&quot;MU&quot;,&quot;MH&quot;,&quot;CH&quot;,&quot;OT&quot;]}}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/wsapi/userSearches</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="X-Request-Id" elementType="Header">
+                <stringProp name="Header.name">X-Request-Id</stringProp>
+                <stringProp name="Header.value">ad021f53-ac41-4266-b9a5-2c76b8abb126</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">${scheme}://${host}/loan/app/dashboard</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">${scheme}://${host}</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="search_id JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">searchId</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">_id</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="Scope.variable"></stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">${__setProperty(searchId,${searchId})}</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor Save Cookies to pops" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">import org.apache.jmeter.protocol.http.control.CookieManager;
+import org.apache.jmeter.protocol.http.control.Cookie;
+
+
+CookieManager manager = ctx.getCurrentSampler().getCookieManager();
+
+props.put(&quot;cookiecount&quot;,String.valueOf(manager.getCookieCount()));
+
+for (int i=0;i&lt;manager.getCookieCount();i++){
+                 // code to convert Cookie information to JMeter Properties
+    props.put(&quot;cookie_&quot; + i, manager.get(i));
+}
+
+</stringProp>
+        </BeanShellPostProcessor>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Portfolio upload groups" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(threads,10)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="TestPlan.comments">upload portfolios and delete at the end</stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">import org.apache.jmeter.protocol.http.control.CookieManager;
+
+import org.apache.jmeter.protocol.http.control.Cookie;
+import org.apache.jmeter.testelement.property.JMeterProperty;
+
+ 
+
+CookieManager manager = sampler.getCookieManager();   //ctx.getCurrentSampler().getProperty(&quot;HTTPSampler.cookie_manager&quot;).getObjectValue();
+
+int count = Integer.parseInt(props.getProperty(&quot;cookiecount&quot;));
+
+ for (int i=0;i&lt;count;i++) {
+       
+	manager.add(props.get(&quot;cookie_&quot;+i));
+}
+
+</stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create portfolio" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;loanPortfolio&quot;:{&quot;portfolioName&quot;:&quot;testUpload_${__threadNum}&quot;,&quot;asOfDt&quot;:&quot;2020-05-21T05:24:14.066Z&quot;,&quot;visitedDt&quot;:&quot;2020-05-21T05:24:32.946Z&quot;}}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/wsapi/loanPortfolios</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="X-Request-Id" elementType="Header">
+                <stringProp name="Header.name">X-Request-Id</stringProp>
+                <stringProp name="Header.value">1d4cce49-edcd-407e-a00c-990715809713</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">${scheme}://apps.trepp.com/loan/app/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">${scheme}://apps.trepp.com</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="Prtfolio_ID JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">portfolio_id</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">rowsInserted[0].loanPortfolioID</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Portfolio-Upload-01" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;loanPortfolioID&quot;:${portfolio_id},&quot;loans&quot;:[{&quot;userLoanID&quot;:&quot;996185534&quot;,&quot;propName&quot;:&quot;PINES AT WARRINGTON&quot;,&quot;address&quot;:&quot;4101 W. Navy Blvd&quot;,&quot;city&quot;:&quot;Pensacola&quot;,&quot;state&quot;:&quot;FL&quot;,&quot;zip&quot;:&quot;32507&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:160,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2008-08-14&quot;,&quot;secBal&quot;:4437000,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:3938504.36,&quot;curCpn&quot;:6.23,&quot;curMonMaturity&quot;:80,&quot;origMonYMC&quot;:210,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:146},{&quot;userLoanID&quot;:&quot;996185971&quot;,&quot;propName&quot;:&quot;LANSBOROUGH&quot;,&quot;address&quot;:&quot;10050 Cullen Boulevard&quot;,&quot;city&quot;:&quot;Houston&quot;,&quot;state&quot;:&quot;TX&quot;,&quot;zip&quot;:&quot;77051&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:176,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2008-08-28&quot;,&quot;secBal&quot;:5040000,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:4213237.92,&quot;curCpn&quot;:6.07,&quot;curMonMaturity&quot;:80,&quot;origMonYMC&quot;:179,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:146},{&quot;userLoanID&quot;:&quot;996185989&quot;,&quot;propName&quot;:&quot;HANSBERRY&quot;,&quot;address&quot;:&quot;4001 South State Street&quot;,&quot;city&quot;:&quot;Chicago&quot;,&quot;state&quot;:&quot;IL&quot;,&quot;zip&quot;:&quot;60609&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:181,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2008-08-28&quot;,&quot;secBal&quot;:3150000,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:2655297.58,&quot;curCpn&quot;:6.14,&quot;curMonMaturity&quot;:80,&quot;origMonYMC&quot;:179,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:146},{&quot;userLoanID&quot;:&quot;996185997&quot;,&quot;propName&quot;:&quot;DR. WESLEY SCOTT&quot;,&quot;address&quot;:&quot;2800 West Wright Street&quot;,&quot;city&quot;:&quot;Milwaukee&quot;,&quot;state&quot;:&quot;WI&quot;,&quot;zip&quot;:&quot;53210&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:80,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2008-08-28&quot;,&quot;secBal&quot;:1597500,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:1328623.5,&quot;curCpn&quot;:6.14,&quot;curMonMaturity&quot;:81,&quot;origMonYMC&quot;:180,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:146},{&quot;userLoanID&quot;:&quot;996186003&quot;,&quot;propName&quot;:&quot;NORMAN BERRY&quot;,&quot;address&quot;:&quot;2840 Norman Berry Drive&quot;,&quot;city&quot;:&quot;East Point&quot;,&quot;state&quot;:&quot;GA&quot;,&quot;zip&quot;:&quot;30344&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:119,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2008-08-28&quot;,&quot;secBal&quot;:2439000,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:2039967.72,&quot;curCpn&quot;:6.11,&quot;curMonMaturity&quot;:81,&quot;origMonYMC&quot;:179,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:146},{&quot;userLoanID&quot;:&quot;996186664&quot;,&quot;propName&quot;:&quot;GREAT EXPECTATIONS FOUNDATION&quot;,&quot;address&quot;:&quot;550 5th Ave W&quot;,&quot;city&quot;:&quot;Grand Marais&quot;,&quot;state&quot;:&quot;MN&quot;,&quot;zip&quot;:&quot;55604&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:1,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2008-09-08&quot;,&quot;secBal&quot;:748125,&quot;origTerm&quot;:300,&quot;amortTerm&quot;:300,&quot;dayCountMethod&quot;:2,&quot;curBal&quot;:563291.61,&quot;curCpn&quot;:6.13,&quot;curMonMaturity&quot;:165,&quot;origMonPP&quot;:180,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:257},{&quot;userLoanID&quot;:&quot;996187449&quot;,&quot;propName&quot;:&quot;TREMONT (NOI LOAN)&quot;,&quot;address&quot;:&quot;2560 West 6th Street&quot;,&quot;city&quot;:&quot;Cleveland&quot;,&quot;state&quot;:&quot;OH&quot;,&quot;zip&quot;:&quot;44113&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:102,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2008-09-18&quot;,&quot;secBal&quot;:1797840,&quot;origTerm&quot;:300,&quot;amortTerm&quot;:480,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:1659849.76,&quot;curCpn&quot;:5.93,&quot;curMonMaturity&quot;:166,&quot;origMonYMC&quot;:120,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:324},{&quot;userLoanID&quot;:&quot;996187456&quot;,&quot;propName&quot;:&quot;TREMONT (ABATEMENT LOAN)&quot;,&quot;address&quot;:&quot;2560 West 6th Street&quot;,&quot;city&quot;:&quot;Cleveland&quot;,&quot;state&quot;:&quot;OH&quot;,&quot;zip&quot;:&quot;44113&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:87,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2008-09-18&quot;,&quot;secBal&quot;:297000,&quot;origTerm&quot;:180,&quot;amortTerm&quot;:180,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:108892.83,&quot;curCpn&quot;:5.84,&quot;curMonMaturity&quot;:46,&quot;origMonYMC&quot;:120,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:164},{&quot;userLoanID&quot;:&quot;996187464&quot;,&quot;propName&quot;:&quot;6771 MADISON LLC&quot;,&quot;address&quot;:&quot;6771 Madison Ave&quot;,&quot;city&quot;:&quot;Tampa&quot;,&quot;state&quot;:&quot;FL&quot;,&quot;zip&quot;:&quot;33619&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:1,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2008-09-29&quot;,&quot;secBal&quot;:902500,&quot;origTerm&quot;:300,&quot;amortTerm&quot;:300,&quot;dayCountMethod&quot;:2,&quot;curBal&quot;:677321.25,&quot;curCpn&quot;:6.14,&quot;curMonMaturity&quot;:166,&quot;origMonPP&quot;:180,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:294},{&quot;userLoanID&quot;:&quot;996191680&quot;,&quot;propName&quot;:&quot;DALEHAVEN ESTATES&quot;,&quot;address&quot;:&quot;3701 Justus Court&quot;,&quot;city&quot;:&quot;Evansville&quot;,&quot;state&quot;:&quot;IN&quot;,&quot;zip&quot;:&quot;47714&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:119,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2008-12-02&quot;,&quot;secBal&quot;:1856280,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:1560308.99,&quot;curCpn&quot;:6.27,&quot;curMonMaturity&quot;:84,&quot;origMonYMC&quot;:179,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:128},{&quot;userLoanID&quot;:&quot;996191706&quot;,&quot;propName&quot;:&quot;UPTOWN VILLAGE&quot;,&quot;address&quot;:&quot;950 Wealthy St.&quot;,&quot;city&quot;:&quot;Grand Rapids&quot;,&quot;state&quot;:&quot;MI&quot;,&quot;zip&quot;:&quot;49506&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:24,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2008-12-02&quot;,&quot;secBal&quot;:812820,&quot;origTerm&quot;:214,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:690519.84,&quot;curCpn&quot;:6.79,&quot;curMonMaturity&quot;:82,&quot;origMonYMC&quot;:177,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:128},{&quot;userLoanID&quot;:&quot;996192431&quot;,&quot;propName&quot;:&quot;ARBORS AT ROSE&quot;,&quot;address&quot;:&quot;2702 South 7th Street&quot;,&quot;city&quot;:&quot;Abilene&quot;,&quot;state&quot;:&quot;TX&quot;,&quot;zip&quot;:&quot;79605&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:80,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2008-12-29&quot;,&quot;secBal&quot;:808178.06,&quot;origTerm&quot;:212,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:684178.48,&quot;curCpn&quot;:6.61,&quot;curMonMaturity&quot;:81,&quot;origMonYMC&quot;:176,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:146},{&quot;userLoanID&quot;:&quot;996192449&quot;,&quot;propName&quot;:&quot;CASA RUFINA II&quot;,&quot;address&quot;:&quot;2323 Casa Rufina Rd&quot;,&quot;city&quot;:&quot;Santa Fe&quot;,&quot;state&quot;:&quot;NM&quot;,&quot;zip&quot;:&quot;87507&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:20,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2008-12-29&quot;,&quot;secBal&quot;:518400,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:433344.77,&quot;curCpn&quot;:5.99,&quot;curMonMaturity&quot;:84,&quot;origMonYMC&quot;:179,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:146},{&quot;userLoanID&quot;:&quot;996192456&quot;,&quot;propName&quot;:&quot;CIMARRON SPRINGS&quot;,&quot;address&quot;:&quot;1302 E. Kilpatrick St&quot;,&quot;city&quot;:&quot;Cleburne&quot;,&quot;state&quot;:&quot;TX&quot;,&quot;zip&quot;:&quot;76031&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:156,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2008-12-29&quot;,&quot;secBal&quot;:1788548.63,&quot;origTerm&quot;:208,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:1495934.59,&quot;curCpn&quot;:6.53,&quot;curMonMaturity&quot;:76,&quot;origMonYMC&quot;:171,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:146},{&quot;userLoanID&quot;:&quot;996192464&quot;,&quot;propName&quot;:&quot;ALSTON LAKE APTS&quot;,&quot;address&quot;:&quot;2430 ASTON AVENUE&quot;,&quot;city&quot;:&quot;North Charleston&quot;,&quot;state&quot;:&quot;SC&quot;,&quot;zip&quot;:&quot;29406&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:72,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2008-12-29&quot;,&quot;secBal&quot;:846000,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:724450.75,&quot;curCpn&quot;:6.67,&quot;curMonMaturity&quot;:85,&quot;origMonYMC&quot;:180,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:146},{&quot;userLoanID&quot;:&quot;996192605&quot;,&quot;propName&quot;:&quot;RAINIER VIEW APTS&quot;,&quot;address&quot;:&quot;1410 62nd Avenue&quot;,&quot;city&quot;:&quot;Fife&quot;,&quot;state&quot;:&quot;WA&quot;,&quot;zip&quot;:&quot;98424&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:49,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2008-12-28&quot;,&quot;secBal&quot;:913770,&quot;origTerm&quot;:300,&quot;amortTerm&quot;:480,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:846331.83,&quot;curCpn&quot;:6,&quot;curMonMaturity&quot;:168,&quot;origMonYMC&quot;:121,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:324},{&quot;userLoanID&quot;:&quot;996193025&quot;,&quot;propName&quot;:&quot;VENTANA COVE APARTMENTS&quot;,&quot;address&quot;:&quot;450 Los Cerritos Road&quot;,&quot;city&quot;:&quot;Los Lunas&quot;,&quot;state&quot;:&quot;NM&quot;,&quot;zip&quot;:&quot;87031&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:72,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2008-12-28&quot;,&quot;secBal&quot;:2475000,&quot;origTerm&quot;:240,&quot;amortTerm&quot;:480,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:2300253.07,&quot;curCpn&quot;:6.5,&quot;curMonMaturity&quot;:109,&quot;origMonYMC&quot;:120,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:324},{&quot;userLoanID&quot;:&quot;996194130&quot;,&quot;propName&quot;:&quot;BROOKSTOWN PLACE&quot;,&quot;address&quot;:&quot;6404 Howell Range Avenue&quot;,&quot;city&quot;:&quot;Baton Rouge&quot;,&quot;state&quot;:&quot;LA&quot;,&quot;zip&quot;:&quot;70805&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:25,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2009-02-24&quot;,&quot;secBal&quot;:990000,&quot;origTerm&quot;:240,&quot;amortTerm&quot;:480,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:919002.72,&quot;curCpn&quot;:5.99,&quot;curMonMaturity&quot;:112,&quot;origMonYMC&quot;:180,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:324},{&quot;userLoanID&quot;:&quot;996194239&quot;,&quot;propName&quot;:&quot;WEST CENTER PLACE&quot;,&quot;address&quot;:&quot;622 North Jefferson Street&quot;,&quot;city&quot;:&quot;Wilmington&quot;,&quot;state&quot;:&quot;DE&quot;,&quot;zip&quot;:&quot;19801&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:56,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2009-02-26&quot;,&quot;secBal&quot;:1845000,&quot;origTerm&quot;:180,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:1558020.68,&quot;curCpn&quot;:6.27,&quot;curMonMaturity&quot;:50,&quot;origMonYMC&quot;:173,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:146},{&quot;userLoanID&quot;:&quot;996196416&quot;,&quot;propName&quot;:&quot;SOUTHWOOD CROSSING PHASE II&quot;,&quot;address&quot;:&quot;3901 Hwy 73&quot;,&quot;city&quot;:&quot;Port Arthur&quot;,&quot;state&quot;:&quot;TX&quot;,&quot;zip&quot;:&quot;77642&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:84,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2009-05-28&quot;,&quot;secBal&quot;:1890000,&quot;origTerm&quot;:180,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:1602117.42,&quot;curCpn&quot;:6.22,&quot;curMonMaturity&quot;:54,&quot;origMonYMC&quot;:174,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:146}]}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/wsapi/loanPortfolioLoans</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="X-Request-Id" elementType="Header">
+                <stringProp name="Header.name">X-Request-Id</stringProp>
+                <stringProp name="Header.value">b4bee6f0-6c2b-4cb5-9710-5bb7cec7f033</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">${scheme}://apps.trepp.com/loan/app/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">${scheme}://apps.trepp.com</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Portfolio-Upload-02" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;loanPortfolioID&quot;:${portfolio_id},&quot;loans&quot;:[{&quot;userLoanID&quot;:&quot;996196424&quot;,&quot;propName&quot;:&quot;Agnes Street&quot;,&quot;address&quot;:&quot;1400 Holcomb&quot;,&quot;city&quot;:&quot;Detroit&quot;,&quot;state&quot;:&quot;MI&quot;,&quot;zip&quot;:&quot;48204&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:24,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2009-05-28&quot;,&quot;secBal&quot;:540000,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:464095.88,&quot;curCpn&quot;:6.59,&quot;curMonMaturity&quot;:90,&quot;origMonYMC&quot;:180,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:264},{&quot;userLoanID&quot;:&quot;996196432&quot;,&quot;propName&quot;:&quot;Oaks at Stone Fountain&quot;,&quot;address&quot;:&quot;13103 Stone Fountain&quot;,&quot;city&quot;:&quot;Tampa&quot;,&quot;state&quot;:&quot;FL&quot;,&quot;zip&quot;:&quot;33612&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:80,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2009-05-28&quot;,&quot;secBal&quot;:1260000,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:420,&quot;dayCountMethod&quot;:2,&quot;curBal&quot;:1146622.62,&quot;curCpn&quot;:6.17,&quot;curMonMaturity&quot;:89,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:294},{&quot;userLoanID&quot;:&quot;996197190&quot;,&quot;propName&quot;:&quot;Easterling Village Apartment&quot;,&quot;address&quot;:&quot;1400 BLOCK OF EASTERLING DRIVE&quot;,&quot;city&quot;:&quot;Alice&quot;,&quot;state&quot;:&quot;TX&quot;,&quot;zip&quot;:&quot;78332&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:48,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2009-06-29&quot;,&quot;secBal&quot;:719442.75,&quot;origTerm&quot;:214,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:614978.2,&quot;curCpn&quot;:6.71,&quot;curMonMaturity&quot;:89,&quot;origMonYMC&quot;:178,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:257},{&quot;userLoanID&quot;:&quot;996197208&quot;,&quot;propName&quot;:&quot;St. Antoine Gardens&quot;,&quot;address&quot;:&quot;115 Kattie Drive&quot;,&quot;city&quot;:&quot;Lafayette&quot;,&quot;state&quot;:&quot;LA&quot;,&quot;zip&quot;:&quot;70501&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:30,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2009-06-29&quot;,&quot;secBal&quot;:576000,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:492707.93,&quot;curCpn&quot;:6.18,&quot;curMonMaturity&quot;:91,&quot;origMonYMC&quot;:180,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:294},{&quot;userLoanID&quot;:&quot;996197216&quot;,&quot;propName&quot;:&quot;Thomas Ninke Senior Village&quot;,&quot;address&quot;:&quot;1901 Lova Road&quot;,&quot;city&quot;:&quot;Victoria&quot;,&quot;state&quot;:&quot;TX&quot;,&quot;zip&quot;:&quot;77901&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:80,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2009-06-29&quot;,&quot;secBal&quot;:1782000,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:1516936.07,&quot;curCpn&quot;:6.36,&quot;curMonMaturity&quot;:90,&quot;origMonYMC&quot;:179,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:294},{&quot;userLoanID&quot;:&quot;996198867&quot;,&quot;propName&quot;:&quot;Audrey Park&quot;,&quot;address&quot;:&quot;2325 Audrey Lane&quot;,&quot;city&quot;:&quot;Shreveport&quot;,&quot;state&quot;:&quot;LA&quot;,&quot;zip&quot;:&quot;71107&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:26,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2009-08-30&quot;,&quot;secBal&quot;:580500,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:498913.89,&quot;curCpn&quot;:6.75,&quot;curMonMaturity&quot;:92,&quot;origMonYMC&quot;:179,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:294},{&quot;userLoanID&quot;:&quot;996198875&quot;,&quot;propName&quot;:&quot;Sheldon Ranch&quot;,&quot;address&quot;:&quot;930 Dell Dale&quot;,&quot;city&quot;:&quot;Channelview&quot;,&quot;state&quot;:&quot;TX&quot;,&quot;zip&quot;:&quot;77530&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:30,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2009-08-30&quot;,&quot;secBal&quot;:540000,&quot;origTerm&quot;:180,&quot;amortTerm&quot;:180,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:235993.55,&quot;curCpn&quot;:6.45,&quot;curMonMaturity&quot;:56,&quot;origMonYMC&quot;:173,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:126},{&quot;userLoanID&quot;:&quot;996228896&quot;,&quot;propName&quot;:&quot;Morningside Senior Housing&quot;,&quot;address&quot;:&quot;104 Pleasant Ridge Drive&quot;,&quot;city&quot;:&quot;Owings Mills&quot;,&quot;state&quot;:&quot;MD&quot;,&quot;zip&quot;:&quot;21117&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:82,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2011-12-27&quot;,&quot;secBal&quot;:2032605,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:1637980.22,&quot;curCpn&quot;:6.15,&quot;curMonMaturity&quot;:22,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:146},{&quot;userLoanID&quot;:&quot;996230603&quot;,&quot;propName&quot;:&quot;RUNNYMEDE SPRINGS&quot;,&quot;address&quot;:&quot;20422 Cohasset Street&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;zip&quot;:&quot;91306&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:38,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2012-05-29&quot;,&quot;secBal&quot;:2477745.46,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:2152717.84,&quot;curCpn&quot;:5.88,&quot;curMonMaturity&quot;:85,&quot;origMonYMC&quot;:139,&quot;origMonPP&quot;:173,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:126},{&quot;userLoanID&quot;:&quot;996230611&quot;,&quot;propName&quot;:&quot;CIELO AZUL SENIOR APARTMENTS&quot;,&quot;address&quot;:&quot;38040 27th Street East&quot;,&quot;city&quot;:&quot;Palmdale&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;zip&quot;:&quot;93550&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:81,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2012-05-29&quot;,&quot;secBal&quot;:2602718.39,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:2276448.21,&quot;curCpn&quot;:5.82,&quot;curMonMaturity&quot;:93,&quot;origMonYMC&quot;:146,&quot;origMonPP&quot;:181,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:257},{&quot;userLoanID&quot;:&quot;996230629&quot;,&quot;propName&quot;:&quot;THE ARDMORE&quot;,&quot;address&quot;:&quot;959 South Ardmore Avenue&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;zip&quot;:&quot;90006&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:48,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2012-05-29&quot;,&quot;secBal&quot;:2461780.4,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:2162007.59,&quot;curCpn&quot;:5.65,&quot;curMonMaturity&quot;:101,&quot;origMonYMC&quot;:155,&quot;origMonPP&quot;:187,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:257},{&quot;userLoanID&quot;:&quot;996230637&quot;,&quot;propName&quot;:&quot;LONG BEACH &amp; BURNETT APARTMENTS&quot;,&quot;address&quot;:&quot;2355 Long Beach Blvd.&quot;,&quot;city&quot;:&quot;Long Beach&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;zip&quot;:&quot;90806&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:46,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2012-05-29&quot;,&quot;secBal&quot;:2381778.99,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:2126299.1,&quot;curCpn&quot;:5.9,&quot;curMonMaturity&quot;:115,&quot;origMonYMC&quot;:144,&quot;origMonPP&quot;:203,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:257},{&quot;userLoanID&quot;:&quot;996230645&quot;,&quot;propName&quot;:&quot;COURTYARD TERRACES&quot;,&quot;address&quot;:&quot;4321 52nd Street&quot;,&quot;city&quot;:&quot;San Diego&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;zip&quot;:&quot;92115&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:88,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2012-05-29&quot;,&quot;secBal&quot;:2404109.46,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:420,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:2209256.81,&quot;curCpn&quot;:5.65,&quot;curMonMaturity&quot;:109,&quot;origMonYMC&quot;:163,&quot;origMonPP&quot;:197,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:257},{&quot;userLoanID&quot;:&quot;996230652&quot;,&quot;propName&quot;:&quot;DELORES MCCOY VILLA I&quot;,&quot;address&quot;:&quot;9315 S. Firth Boulevard&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;zip&quot;:&quot;90002&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:64,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2012-05-29&quot;,&quot;secBal&quot;:2930156.46,&quot;origTerm&quot;:171,&quot;amortTerm&quot;:171,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:1605302.31,&quot;curCpn&quot;:6.15,&quot;curMonMaturity&quot;:68,&quot;origMonYMC&quot;:156,&quot;origMonPP&quot;:156,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:126},{&quot;userLoanID&quot;:&quot;996230660&quot;,&quot;propName&quot;:&quot;PENINSULA STATION&quot;,&quot;address&quot;:&quot;2901 - 2905 South El Camino Real&quot;,&quot;city&quot;:&quot;San Mateo&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;zip&quot;:&quot;94403&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:68,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2012-05-29&quot;,&quot;secBal&quot;:3118936.97,&quot;origTerm&quot;:204,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:2760473.06,&quot;curCpn&quot;:5.65,&quot;curMonMaturity&quot;:98,&quot;origMonYMC&quot;:165,&quot;origMonPP&quot;:165,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:257},{&quot;userLoanID&quot;:&quot;996232286&quot;,&quot;propName&quot;:&quot;SALZER SQUARE II APARTMENTS&quot;,&quot;address&quot;:&quot;1224 South 8th Street&quot;,&quot;city&quot;:&quot;La Crosse&quot;,&quot;state&quot;:&quot;WI&quot;,&quot;zip&quot;:&quot;54601&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:24,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2013-02-13&quot;,&quot;secBal&quot;:486574.12,&quot;origTerm&quot;:290,&quot;amortTerm&quot;:290,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:418714.32,&quot;curCpn&quot;:5.79,&quot;curMonMaturity&quot;:208,&quot;origMonYMC&quot;:109,&quot;origMonPP&quot;:286,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:242},{&quot;userLoanID&quot;:&quot;996232294&quot;,&quot;propName&quot;:&quot;BOULDER RIDGE APARTMENTS&quot;,&quot;address&quot;:&quot;901 Dominion Drive&quot;,&quot;city&quot;:&quot;Hudson&quot;,&quot;state&quot;:&quot;WI&quot;,&quot;zip&quot;:&quot;54016&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:24,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2013-02-13&quot;,&quot;secBal&quot;:1265156.3,&quot;origTerm&quot;:271,&quot;amortTerm&quot;:271,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:1055086.84,&quot;curCpn&quot;:5.75,&quot;curMonMaturity&quot;:189,&quot;origMonYMC&quot;:86,&quot;origMonPP&quot;:267,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:242},{&quot;userLoanID&quot;:&quot;996232302&quot;,&quot;propName&quot;:&quot;DEERWOOD CROSSING SENIOR HOUSING&quot;,&quot;address&quot;:&quot;4195 W. Bradley Road&quot;,&quot;city&quot;:&quot;Brown Deer&quot;,&quot;state&quot;:&quot;WI&quot;,&quot;zip&quot;:&quot;53209&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:66,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2013-02-13&quot;,&quot;secBal&quot;:1721923.21,&quot;origTerm&quot;:338,&quot;amortTerm&quot;:338,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:1546907.37,&quot;curCpn&quot;:5.91,&quot;curMonMaturity&quot;:256,&quot;origMonYMC&quot;:157,&quot;origMonPP&quot;:334,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:242},{&quot;userLoanID&quot;:&quot;996232310&quot;,&quot;propName&quot;:&quot;KING DRIVE COMMONS PHASE III&quot;,&quot;address&quot;:&quot;2711 - 2737 N. Dr. Martin Luther King Jr. Drive&quot;,&quot;city&quot;:&quot;Milwaukee&quot;,&quot;state&quot;:&quot;WI&quot;,&quot;zip&quot;:&quot;53212&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:24,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2013-02-13&quot;,&quot;secBal&quot;:525014.59,&quot;origTerm&quot;:343,&quot;amortTerm&quot;:343,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:473039.91,&quot;curCpn&quot;:5.92,&quot;curMonMaturity&quot;:261,&quot;origMonYMC&quot;:162,&quot;origMonPP&quot;:339,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:242},{&quot;userLoanID&quot;:&quot;996232328&quot;,&quot;propName&quot;:&quot;BERLIN HOUSING&quot;,&quot;address&quot;:&quot;136 North Capron Street&quot;,&quot;city&quot;:&quot;Berlin&quot;,&quot;state&quot;:&quot;WI&quot;,&quot;zip&quot;:&quot;54923&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:55,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2013-02-13&quot;,&quot;secBal&quot;:1439107.96,&quot;origTerm&quot;:159,&quot;amortTerm&quot;:159,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:844512.6,&quot;curCpn&quot;:5.04,&quot;curMonMaturity&quot;:76,&quot;origMonLock&quot;:37,&quot;origMonYMC&quot;:97,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:122}],&quot;loanPortfolioAuditId&quot;:&quot;5ec61095627ece6562a84b90&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/wsapi/loanPortfolioLoans</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="X-Request-Id" elementType="Header">
+                <stringProp name="Header.name">X-Request-Id</stringProp>
+                <stringProp name="Header.value">7e962390-2fae-4b9f-b0c0-518230907ec2</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">${scheme}://apps.trepp.com/loan/app/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">${scheme}://apps.trepp.com</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Portfolio-Upload-03" enabled="true">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;loanPortfolioID&quot;:${portfolio_id},&quot;loans&quot;:[{&quot;userLoanID&quot;:&quot;998145742&quot;,&quot;propName&quot;:&quot;Chestnut Station&quot;,&quot;address&quot;:&quot;20 West Chestnut Avenue&quot;,&quot;city&quot;:&quot;Merchantville&quot;,&quot;state&quot;:&quot;NJ&quot;,&quot;zip&quot;:&quot;08109&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:74,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2004-05-26&quot;,&quot;secBal&quot;:1900000,&quot;origTerm&quot;:360,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:1266676.71,&quot;curCpn&quot;:6.54,&quot;curMonMaturity&quot;:174,&quot;origMonLock&quot;:36,&quot;origMonPP&quot;:120,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:422},{&quot;userLoanID&quot;:&quot;998150262&quot;,&quot;propName&quot;:&quot;Sherman Forest (New Parkwoods Phase I)&quot;,&quot;address&quot;:&quot;3996 N. SHERMAN DRIVE&quot;,&quot;city&quot;:&quot;Indianapolis&quot;,&quot;state&quot;:&quot;IN&quot;,&quot;zip&quot;:&quot;46226&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:54,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2007-02-27&quot;,&quot;secBal&quot;:486000,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:300,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:345008.82,&quot;curCpn&quot;:6.11,&quot;curMonMaturity&quot;:63,&quot;origMonYMC&quot;:180,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:146},{&quot;userLoanID&quot;:&quot;998150270&quot;,&quot;propName&quot;:&quot;Shady Grove&quot;,&quot;address&quot;:&quot;1725 Savage Road&quot;,&quot;city&quot;:&quot;Charleston&quot;,&quot;state&quot;:&quot;SC&quot;,&quot;zip&quot;:&quot;29407&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:72,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2007-02-27&quot;,&quot;secBal&quot;:1314900,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:1056348.3,&quot;curCpn&quot;:6.11,&quot;curMonMaturity&quot;:62,&quot;origMonYMC&quot;:179,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:146},{&quot;userLoanID&quot;:&quot;998150387&quot;,&quot;propName&quot;:&quot;Azalea Place&quot;,&quot;address&quot;:&quot;669 Rutherford Road&quot;,&quot;city&quot;:&quot;Greenville&quot;,&quot;state&quot;:&quot;SC&quot;,&quot;zip&quot;:&quot;29609&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:54,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2007-03-28&quot;,&quot;secBal&quot;:1440000,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:1161053.99,&quot;curCpn&quot;:6.11,&quot;curMonMaturity&quot;:64,&quot;origMonYMC&quot;:180,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:146},{&quot;userLoanID&quot;:&quot;998150395&quot;,&quot;propName&quot;:&quot;West 135th Street HDFC&quot;,&quot;address&quot;:&quot;517 W 135th St&quot;,&quot;city&quot;:&quot;New York&quot;,&quot;state&quot;:&quot;NY&quot;,&quot;zip&quot;:&quot;10031&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:61,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2007-03-29&quot;,&quot;secBal&quot;:481500,&quot;origTerm&quot;:300,&quot;amortTerm&quot;:300,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:225353.55,&quot;curCpn&quot;:6.03,&quot;curMonMaturity&quot;:147,&quot;origMonLock&quot;:36,&quot;origMonPP&quot;:121,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:220},{&quot;userLoanID&quot;:&quot;998150429&quot;,&quot;propName&quot;:&quot;Meadowlands Apts&quot;,&quot;address&quot;:&quot;375 Warner St.&quot;,&quot;city&quot;:&quot;Reading&quot;,&quot;state&quot;:&quot;MI&quot;,&quot;zip&quot;:&quot;49274&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:36,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2007-04-15&quot;,&quot;secBal&quot;:298827,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:242818.56,&quot;curCpn&quot;:6.41,&quot;curMonMaturity&quot;:65,&quot;origMonYMC&quot;:162,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:128},{&quot;userLoanID&quot;:&quot;998150841&quot;,&quot;propName&quot;:&quot;Westerville Senior&quot;,&quot;address&quot;:&quot;7150 Sunbury Road&quot;,&quot;city&quot;:&quot;Westerville&quot;,&quot;state&quot;:&quot;OH&quot;,&quot;zip&quot;:&quot;43081&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:75,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2007-05-15&quot;,&quot;secBal&quot;:1539000,&quot;origTerm&quot;:204,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:1241935.55,&quot;curCpn&quot;:6.05,&quot;curMonMaturity&quot;:54,&quot;origMonYMC&quot;:180,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:146},{&quot;userLoanID&quot;:&quot;998150858&quot;,&quot;propName&quot;:&quot;Pecan Grove&quot;,&quot;address&quot;:&quot;100 Pecan Grove Drive&quot;,&quot;city&quot;:&quot;Waynesboro&quot;,&quot;state&quot;:&quot;GA&quot;,&quot;zip&quot;:&quot;30830&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:40,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2007-05-15&quot;,&quot;secBal&quot;:535094.56,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:434892.05,&quot;curCpn&quot;:6.05,&quot;curMonMaturity&quot;:64,&quot;origMonYMC&quot;:178,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:146},{&quot;userLoanID&quot;:&quot;998151096&quot;,&quot;propName&quot;:&quot;SALEM GARDENS&quot;,&quot;address&quot;:&quot;7 Salem Gardens Road&quot;,&quot;city&quot;:&quot;Winston Salem&quot;,&quot;state&quot;:&quot;NC&quot;,&quot;zip&quot;:&quot;27107&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:151,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2007-05-30&quot;,&quot;secBal&quot;:3074400,&quot;origTerm&quot;:216,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:2489987.73,&quot;curCpn&quot;:6.05,&quot;curMonMaturity&quot;:66,&quot;origMonYMC&quot;:180,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:146},{&quot;userLoanID&quot;:&quot;998151435&quot;,&quot;propName&quot;:&quot;Red Maple Grove Apartments&quot;,&quot;address&quot;:&quot;2901 Tabor Street&quot;,&quot;city&quot;:&quot;Indianapolis&quot;,&quot;state&quot;:&quot;IN&quot;,&quot;zip&quot;:&quot;46203&quot;,&quot;propTypeCode&quot;:&quot;MF&quot;,&quot;numUnits&quot;:40,&quot;occDt&quot;:&quot;1899-12-31&quot;,&quot;originationDt&quot;:&quot;2007-08-29&quot;,&quot;secBal&quot;:742858.19,&quot;origTerm&quot;:212,&quot;amortTerm&quot;:360,&quot;dayCountMethod&quot;:0,&quot;curBal&quot;:602668.11,&quot;curCpn&quot;:6.11,&quot;curMonMaturity&quot;:64,&quot;origMonYMC&quot;:175,&quot;NOI&quot;:null,&quot;NCF&quot;:null,&quot;pricingMethod&quot;:&quot;SpreadTSY&quot;,&quot;pricingInput&quot;:146}],&quot;loanPortfolioAuditId&quot;:&quot;5ec61095627ece6562a84b90&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path">/wsapi/loanPortfolioLoans</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="X-Request-Id" elementType="Header">
+                <stringProp name="Header.name">X-Request-Id</stringProp>
+                <stringProp name="Header.value">70d0233d-dc54-46d2-abb8-2ac19e8d6bfa</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">${scheme}://apps.trepp.com/loan/app/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">${scheme}://apps.trepp.com</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=utf-8</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Portfolio-delete" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/wsapi/loanPortfolios/${portfolio_id}</stringProp>
+          <stringProp name="HTTPSampler.method">DELETE</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="X-Request-Id" elementType="Header">
+                <stringProp name="Header.name">X-Request-Id</stringProp>
+                <stringProp name="Header.value">637bba43-d471-45f7-a926-170cd9c3c84a</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">${scheme}://apps.trepp.com/loan/app/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">${scheme}://apps.trepp.com</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Market Loan Listing Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(threads,10)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">import org.apache.jmeter.protocol.http.control.CookieManager;
+
+import org.apache.jmeter.protocol.http.control.Cookie;
+import org.apache.jmeter.testelement.property.JMeterProperty;
+
+ 
+
+CookieManager manager = sampler.getCookieManager();   //ctx.getCurrentSampler().getProperty(&quot;HTTPSampler.cookie_manager&quot;).getObjectValue();
+
+int count = Integer.parseInt(props.getProperty(&quot;cookiecount&quot;));
+
+ for (int i=0;i&lt;count;i++) {
+       
+	manager.add(props.get(&quot;cookie_&quot;+i));
+}
+
+</stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="loan count by search id" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="count" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">count</stringProp>
+                <stringProp name="Argument.value">true</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="filterCriteria" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                <stringProp name="Argument.name">filterCriteria</stringProp>
+                <stringProp name="Argument.value">{}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+              <elementProp name="searchId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.name">searchId</stringProp>
+                <stringProp name="Argument.value">${__property(searchId)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/wsapi/loans</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="X-Request-Id" elementType="Header">
+                <stringProp name="Header.name">X-Request-Id</stringProp>
+                <stringProp name="Header.value">262dabb5-4025-47de-aad0-34aa2d6faeae</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">${scheme}://apps.trepp.com/loan/app/market/loanListing?display=map&amp;viewName=Trepp%20Standard&amp;portfolioViewName=Portfolio%20Standard&amp;selectedIdType=&amp;selectedIdValue=&amp;currentSort=-curBal&amp;loanPanelSection=Overview&amp;searchId=60646685081ba73ebd64e1de</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="loan count JSON Extractor" enabled="true">
+            <stringProp name="JSONPostProcessor.referenceNames">loan_count</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">count</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+            <stringProp name="Scope.variable"></stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="BeanShell PostProcessor" enabled="true">
+            <boolProp name="resetInterpreter">false</boolProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="script">int lcount = Integer.parseInt(vars.get(&quot;loan_count&quot;));
+int count = (int)(lcount/500);
+if(lcount%500 != 0){
+	count++;
+	}
+
+
+vars.put(&quot;loop_count&quot;, count.toString());
+log.info(&quot;loop_count&quot;+ count.toString())</stringProp>
+          </BeanShellPostProcessor>
+          <hashTree/>
+        </hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop_Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">${loop_count}</stringProp>
+        </LoopController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Market Lon listing " enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="fields" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">fields</stringProp>
+                  <stringProp name="Argument.value">userLoanComment.comment,userLoanComment.modifiedDate,APPRED_n,DSCRAsOf,IOPeriods,address,affiliatedSponsors,airportLocationFlag,allocBalPct,amortTerm,anchorType,appRedDtTrustee,appValue,appValueDt,apprValPerSqFtOrUnit,assessmentYear,balPerSqFtOrUnit,benchmarkTsyIndex,benchmarkTsyRate,benchmarkSwapIndex,benchmarkSwapRate,bloombergName,category,censusTract,city,compstakDate,compstakMarket,compstakMarketResultsEffectiveRent,compstakMarketResultsFreeMonths,compstakMarketResultsLeaseTerm,compstakMarketResultsStartingRent,compstakMarketResultsTransactionSize,compstakMarketResultsWorkValue,compstakSubmarket,compstakSubmarketResultsEffectiveRent,compstakSubmarketResultsFreeMonths,compstakSubmarketResultsLeaseTerm,compstakSubmarketResultsStartingRent,compstakSubmarketResultsTransactionSize,compstakSubmarketResultsWorkValue,correctedStatus,courierWarehouseFlag,county,couponType,cumAccrUnpdAdvInt,cumAser,cumulativeWODRA,curAmortType,curBal,curBankruptcyDt,curCpn,curDSCR,curDlqCode,curLTV,curLoanBal,curMasterServReturnDt,curMonAged,curMonLock,curMonMaturity,curMonPP,curMonYMC,curNetCpn,curNCFDebtYield,curNOIDebtYield,curReoDt,curSpecServTransDt,dayCountMethod,dataSource,dealPct,dealType,defeasStatus,defeasableRemainToFirst,derivedMaturityDt,dispDt,dispTypeCd,dlqTot12mons,dlqTotAll,estDefeasance,estPropValue,estimatedSpreadToTsy,estimatedSpreadToSwap,estimatedSwapRatePct,expResDt,expensePerSqFtOrUnit,expenses,expensePct,extensionType,extoption1,extoption2,extoption3,extoption4,extoption5,fhaHierarchy,fhaLoanStatus,fhaNumber,formattedAPN,fullyExtendedMatDt,greenCertifications,greenProgram,grocerType,grocerWarehouseFlag,guarantor,hotelBrand,hotelFlagFranchise,impliedCapRateNCF,impliedCapRateNOI,impliedCapRateSecNOI,inQOZ,isMultiProperty,lastPaidThruDt,lcomm_commentary,lcomm_commentType,lcomm_period,liqExpense,liqProceeds,liqSalesPrice,loanLiquidationReport,loanModCode,loanModDerivedDt,loanModDerivedStatus,loanModDescTrepp,loanModifiedBookDt,loanModifiedExecutionDt,loanName,loanPiecesExist,loanSpecialServicer,loanSpecialServicerContact,loanSpecialServicerPhone,loanpurpose,lossAmt,lossPct,masterLoanIDTrepp,maturityDt,maturityModelDt,modDerivedLoanModDesc,modPrePayPenAmt,modPrePayPenPct,modelFirstOpenDt,monthsToRecover,mrAser,msaName,ncf,ncfAsOf,ncfDSCR,ncfPerSqFtOrUnit,noi,noiAsOf,noiDSCR,noiEffDt,noiPerSqFtOrUnit,noteName,numNotes,numUnits,occDt,occRate,origBorrowerName,origTerm,originationDt,originator,ownerCity,ownerCompanyName,ownerEmail,ownerLinkedIn,ownerMailAddress,ownerMailCity,ownerMailState,ownerMailZip,ownerName,ownerName1,ownerPhone1,ownerPhone2,ownerState,ownerStreetAddress,ownerZip,paidOffAmt,paidThruDt,pctExp13to24Mon,pctExp1to12Mon,pctExp25to36Mon,pctExp37to48Mon,pctExp49to60Mon,penaltyPct,perpastmaturity,poolnum,prepayCategory,prepayDesc,prepayPenalty,priorFYNCFchange,priorFYNOIchange,proFormaAttainedLoan,proFormaFlagLoan,proFormaType,programCat,propName,propTypeCode,propTypeNorm,propertySubtype,proceedsPct,qtrlyVintage,rateIndex,rateMargin,realEstateTaxes,recordingDate,refinanceProceeds,region,relatedRecordsCount,REOLiquidationReport,revenuPerSqFtOrUnit,revenues,rmsPropertyTrafficLightScore,rmsBITrafficLightScore,saleCode,saleDate,salePrice,salesDeedCategoryType,secApprValPerSqFtOrUnit,secBal,secBalPerSqFtOrUnit,secCurLeaseExpDt1,secCurLeaseExpDt2,secCurLeaseExpDt3,secCurLeaseExpDt4,secCurLeaseExpDt5,secCurLeasePct1,secCurLeasePct2,secCurLeasePct3,secCurLeasePct4,secCurLeasePct5,secCurLessee1,secCurLessee2,secCurLessee3,secCurLessee4,secCurLessee5,secDebtYieldNCFnew,secDebtYieldNOInew,secLTV,secLTVAsIs,secLoanBal,secOccupancyRate,secNCFDSCR,secNCFDSCRAsIs,secNOIDSCR,secSqFt,seller,sellerName,shoppingCenterFormat,singleTenantFlag,specServStatus,speclServicerTransferReason,splitcross,splitdate,splitreason,sqFootage1,sqFootage2,sqFootage3,sqFootage4,sqFootage5,sqftNoUnits,state,submarket,totalAssessedValue,totRemExtPeriods,totalExposure,totalOtherAdv,totalPIAdv,totalTIAdv,watchListDt,watchListStatus,workoutCode,yearBuilt,yrRenov,zip</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="limit" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">limit</stringProp>
+                  <stringProp name="Argument.value">500</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="searchId" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">searchId</stringProp>
+                  <stringProp name="Argument.value">${__property(searchId)}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="skip" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">skip</stringProp>
+                  <stringProp name="Argument.value">${skip_count}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+                <elementProp name="sort" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">sort</stringProp>
+                  <stringProp name="Argument.value">-curBal</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">${host}</stringProp>
+            <stringProp name="HTTPSampler.port">443</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+            <stringProp name="HTTPSampler.path">/wsapi/loans</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="X-Request-Id" elementType="Header">
+                  <stringProp name="Header.name">X-Request-Id</stringProp>
+                  <stringProp name="Header.value">35e70434-bbe0-4b5e-aafa-2cecce437dec</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">${scheme}://apps.trepp.com/loan/app/market/loanListing?display=map&amp;viewName=Trepp%20Standard&amp;portfolioViewName=Portfolio%20Standard&amp;selectedIdType=&amp;selectedIdValue=&amp;currentSort=-curBal&amp;loanPanelSection=Overview&amp;searchId=60646685081ba73ebd64e1de</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">int cidx = Integer.parseInt(vars.get(&quot;__jm__Loop_Controller__idx&quot;));
+
+vars.put(&quot;skip_count&quot;,String.valueOf( cidx*500) );
+
+//log.info(vars.get(&quot;__jm__Loop_Controller__idx&quot;));</stringProp>
+            </BeanShellPreProcessor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Loan Prop Details Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config for loan prop ids" enabled="true">
+          <stringProp name="delimiter">,</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="filename">D:/Users/YKumar/Documents/loan_prop_ids.csv</stringProp>
+          <boolProp name="ignoreFirstLine">false</boolProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">true</boolProp>
+          <stringProp name="shareMode">shareMode.thread</stringProp>
+          <boolProp name="stopThread">false</boolProp>
+          <stringProp name="variableNames">loan_prop_id</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">import org.apache.jmeter.protocol.http.control.CookieManager;
+
+import org.apache.jmeter.protocol.http.control.Cookie;
+import org.apache.jmeter.testelement.property.JMeterProperty;
+
+ 
+
+CookieManager manager = sampler.getCookieManager();   //ctx.getCurrentSampler().getProperty(&quot;HTTPSampler.cookie_manager&quot;).getObjectValue();
+
+int count = Integer.parseInt(props.getProperty(&quot;cookiecount&quot;));
+
+ for (int i=0;i&lt;count;i++) {
+       
+	manager.add(props.get(&quot;cookie_&quot;+i));
+}
+
+</stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Loan PropertyDetails" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/wsapi/loans/${loan_prop_id}</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="X-Request-Id" elementType="Header">
+                <stringProp name="Header.name">X-Request-Id</stringProp>
+                <stringProp name="Header.value">447c9339-6630-49a5-bcd1-298d17fce34b</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">${scheme}://apps.trepp.com/loan/app/deal/loan_prop_detail?whichTrepp=l&amp;loanPortfolioLoanID=&amp;loanUniversePropID=8824A22F816950A7ABAD04E44035B805&amp;defaultTab=&amp;idType=loanUniversePropID&amp;idValue=8824A22F816950A7ABAD04E44035B805</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Strats Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">${__P(threads,10)}</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="BeanShell PreProcessor" enabled="true">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">import org.apache.jmeter.protocol.http.control.CookieManager;
+
+import org.apache.jmeter.protocol.http.control.Cookie;
+import org.apache.jmeter.testelement.property.JMeterProperty;
+
+ 
+
+CookieManager manager = sampler.getCookieManager();   //ctx.getCurrentSampler().getProperty(&quot;HTTPSampler.cookie_manager&quot;).getObjectValue();
+
+int count = Integer.parseInt(props.getProperty(&quot;cookiecount&quot;));
+
+ for (int i=0;i&lt;count;i++) {
+       
+	manager.add(props.get(&quot;cookie_&quot;+i));
+}
+
+</stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="strats all" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="whichTrepp" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">l</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">whichTrepp</stringProp>
+              </elementProp>
+              <elementProp name="market" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">1</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">market</stringProp>
+              </elementProp>
+              <elementProp name="searchId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${__property(searchId)}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">searchId</stringProp>
+              </elementProp>
+              <elementProp name="strat" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">curPropBal</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">strat</stringProp>
+              </elementProp>
+              <elementProp name="by1" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">by1</stringProp>
+              </elementProp>
+              <elementProp name="across1" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">across1</stringProp>
+              </elementProp>
+              <elementProp name="detailColumns" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">detailColumns</stringProp>
+              </elementProp>
+              <elementProp name="isPercentOf" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">isPercentOf</stringProp>
+              </elementProp>
+              <elementProp name="detailsort" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">detailsort</stringProp>
+              </elementProp>
+              <elementProp name="mode" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">basic</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">mode</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">UTF-8</stringProp>
+          <stringProp name="HTTPSampler.path">/abpw/l/market_strats.cgi</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="X-Request-Id" elementType="Header">
+                <stringProp name="Header.name">X-Request-Id</stringProp>
+                <stringProp name="Header.value">82c55554-e90c-45ce-b0e4-3d916d4eb4e2</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">${scheme}://${host}/abpw/l/market_strats.cgi?whichTrepp=l&amp;searchId=606600d9a4fc20196b66dbc2&amp;market=1&amp;mode=&amp;strat=&amp;by1=&amp;across1=&amp;detailColumns=&amp;isPercentOf=&amp;detailsort=</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.5</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>false</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>false</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>true</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <hostname>true</hostname>
+            <threadCounts>true</threadCounts>
+            <sampleCount>true</sampleCount>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <BeanShellListener guiclass="TestBeanGUI" testclass="BeanShellListener" testname="BeanShell Listener" enabled="true">
+        <stringProp name="filename"></stringProp>
+        <stringProp name="parameters"></stringProp>
+        <boolProp name="resetInterpreter">false</boolProp>
+        <stringProp name="script"></stringProp>
+      </BeanShellListener>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

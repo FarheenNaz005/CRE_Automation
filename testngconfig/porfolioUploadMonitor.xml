@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Test_Scenarios" verbose="3" parallel="tests"
+	thread-count="1">
+	<parameter name="Execute" value="local" />
+	<parameter name="remoteurl" value="https://yogendrabinmile:yBEQc6HUFnciunDo8LoeHMKUDi5Gq7TczhjFsNAIZYxqh2sihq@hub.lambdatest.com/wd/hub" />
+	<parameter name="environment" value="Production"/>
+
+	<test name="Portfolio upload monitor test" preserveorder="true">
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:81.0;name:Portfolio upload monitor test;build:Monitor;console:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>2" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.PortfolioUploadMonitor" />
+			<class name="com.newdemo.steps.ManagePortfolioFunctionality">
+			<parameter name="portfolioName" value="testupload" />
+				<methods>
+					<include name="verify1Portfolio" />
+					<include name="verify7PortfolioDelete" />
+				</methods>
+			</class>
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test>
+	<!-- <test name="verify Stats | Trends Page" preserveorder="true">
+		<parameter name="capabilities" value="browserName:chrome;platform:Windows 10;version:80.0;name:verify Stats | Trends Page;build:Monitor;console:true;resolution:1440x900"/>
+    	<classes>
+    		<parameter name="ParameterNValue" value="InputDataRow=>2"/>
+      		<class name="com.newdemo.steps.LogInTest"/>
+      		<class name="com.newdemo.steps.TrendsTest">
+      			<methods>
+					<exclude name="verify6Download" />
+				</methods>
+      		</class>
+      		<class name="com.newdemo.steps.LogOutTest"/>
+   		</classes>
+ 	</test> -->
+
+	<listeners>
+		<!-- <listener class-name="com.newdemo.framework.listner.TestResultListener" /> -->
+		<listener class-name="com.newdemo.framework.listner.AnnotationTransformer" />
+	</listeners>
+</suite>

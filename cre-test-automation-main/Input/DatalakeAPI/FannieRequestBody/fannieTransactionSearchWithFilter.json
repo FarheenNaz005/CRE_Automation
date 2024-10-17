@@ -1,0 +1,10 @@
+{
+    "filters": [
+        {
+            "bloombergname": "874872",
+            "not_equals": false
+        }
+    ],
+    "fields": ["recorddt", "trustee","bloombergname",
+    "securitystatus", "loaddt"]
+}

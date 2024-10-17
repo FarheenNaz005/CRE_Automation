@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Test_Scenarios" verbose="3">
+	<parameter name="Execute" value="cloud" />
+	<parameter name="remoteurl"
+		value="https://anish_ohri:ke0cNdOipKNVGKK6fZpNaRS2mZgWV8Yq8RB8N1HSODZBfEro1g@hub.lambdatest.com/wd/hub" />
+	<parameter name="environment" value="Production" />
+	<parameter name="application" value="CRE" />
+	<parameter name="opsgenieAlert" value="Yes" />
+
+	<test name="CRE Sanity Test" preserveorder="true">
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:98.0;name:CRE Smoke Validation;build:CRE Sanity Monitor - PROD;console:true;network:true;network.full.har:true;resolution:1440x900" />
+		
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>4" />
+			<class name="com.newdemo.steps.LogInTest"> 
+				<methods>
+					<exclude name="accessibilityTest" />
+				</methods>
+			</class>
+			<class name="com.newdemo.steps.CREHomePage"> 
+			<methods>
+					<include name="HomePage" />
+				</methods>
+			</class>
+			<class name="com.newdemo.steps.PropertyPageFunctionality">
+				<methods>
+					<include name="SearchandData" />
+				</methods>
+			</class>
+			<class name="com.newdemo.steps.CRENewPageListingFunctionality">
+				<methods>
+					<include name="verifyButtonVisibility" />
+				</methods>
+			</class>
+			<!-- <class name="com.newdemo.steps.AlertFunctionality">
+				<methods>
+					<include name="verify2AlertsNotification" />
+				</methods>
+			</class> -->
+			<class name="com.newdemo.steps.DealListFunctionality">
+				<methods>
+					<include name="searchAndAddToDealList" />
+				</methods>
+			</class>
+			<!-- <class name="com.newdemo.steps.TrendsTest">
+				<methods>
+					<exclude name="verify6Download" />
+					<exclude name="accessibilityTest" />
+				</methods>
+			</class> -->
+			<class name="com.newdemo.steps.PortfolioUploadMonitor" >
+			<methods>
+					<include name="uploadPortfolio" />
+				</methods>
+			</class>
+			<class name="com.newdemo.steps.ManagePortfolioFunctionality">
+				<parameter name="portfolioName" value="testupload" />
+				<methods>
+					<include name="verify1Portfolio" />
+					<include name="verify7PortfolioDelete" />
+				</methods>
+			</class>
+			<class name="com.newdemo.steps.LogOutTest" /> 
+		</classes>
+	</test>
+	
+	<listeners>
+		<listener
+			class-name="com.newdemo.framework.listner.TestResultListener" />
+		<!-- <listener
+			class-name="com.newdemo.framework.listner.AnnotationTransformer" /> -->
+	</listeners>
+</suite>

@@ -1,0 +1,473 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "match": {
+      "type": "integer"
+    },
+    "total": {
+      "type": "integer"
+    },
+    "offset": {
+      "type": "integer"
+    },
+    "offsets": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "uwncfdscr_allin": {
+              "type": "null"
+            },
+            "uwncfdscrallin": {
+              "type": "null"
+            },
+            "issuanceltv": {
+              "type": "integer"
+            },
+            "propertyvalue": {
+              "type": "integer"
+            },
+            "monthlydebtservice": {
+              "type": "number"
+            },
+            "loanuniverseloanid": {
+              "type": "string"
+            },
+            "bloombergname": {
+              "type": "string"
+            },
+            "fannieloanid": {
+              "type": "string"
+            },
+            "groupid": {
+              "type": "null"
+            },
+            "prospectusloanid": {
+              "type": "string"
+            },
+            "currscheduledbalbegin": {
+              "type": "number"
+            },
+            "currentnoterate": {
+              "type": "number"
+            },
+            "maturitydt": {
+              "type": "string"
+            },
+            "netrate": {
+              "type": "number"
+            },
+            "totalschedpidue": {
+              "type": "number"
+            },
+            "liquidprepaymentdt": {
+              "type": ["null","string"]
+            },
+            "liquidprepaymentcode": {
+              "type": ["null","string"]
+            },
+            "actualbal": {
+              "type": "number"
+            },
+            "priorrevenue": {
+              "type": "integer"
+            },
+            "prioropexpense": {
+              "type": "integer"
+            },
+            "priorphyoccupancy": {
+              "type": "integer"
+            },
+            "priorasofdt": {
+              "type": "string"
+            },
+            "prior2revenue": {
+              "type": "null"
+            },
+            "prior2phyoccupancy": {
+              "type": "null"
+            },
+            "prior2opexpense": {
+              "type": "null"
+            },
+            "prior2asofdt": {
+              "type": "null"
+            },
+            "mrphysicaloccupancy": {
+              "type": "null"
+            },
+            "mrstartasofdt": {
+              "type": "null"
+            },
+            "mrendasofdt": {
+              "type": "null"
+            },
+            "mrindicator": {
+              "type": "string"
+            },
+            "priorncf": {
+              "type": "integer"
+            },
+            "priordscrncf": {
+              "type": "number"
+            },
+            "prior2ncf": {
+              "type": "null"
+            },
+            "prior2dscrncf": {
+              "type": "null"
+            },
+            "mrncf": {
+              "type": "null"
+            },
+            "mrdscrncf": {
+              "type": "null"
+            },
+            "totalloanamt": {
+              "type": "integer"
+            },
+            "masterservicer": {
+              "type": "string"
+            },
+            "unitofmeasure": {
+              "type": "string"
+            },
+            "initpoolbalpct": {
+              "type": "integer"
+            },
+            "originalupb": {
+              "type": "integer"
+            },
+            "loanservicer": {
+              "type": "string"
+            },
+            "originterestrate": {
+              "type": "number"
+            },
+            "passthroughrate": {
+              "type": "number"
+            },
+            "interestaccrualmethod": {
+              "type": "string"
+            },
+            "seasoningmonths": {
+              "type": "integer"
+            },
+            "origamortermmonths": {
+              "type": "integer"
+            },
+            "issuancenoteratepct": {
+              "type": "null"
+            },
+            "uwnoidebtyieldpct": {
+              "type": "null"
+            },
+            "originationcapratenoi": {
+              "type": "null"
+            },
+            "curnoidebtyield": {
+              "type": ["number","null" ]
+            },
+            "mrcapratenoi": {
+              "type": "number"
+            },
+            "prior2dscrnoi": {
+              "type": "null"
+            },
+            "priordscrnoi": {
+              "type": "number"
+            },
+            "mrdscrnoi": {
+              "type": "null"
+            },
+            "uwnoidscr": {
+              "type": "null"
+            },
+            "uwcapex": {
+              "type": "integer"
+            },
+            "uwnoi": {
+              "type": "integer"
+            },
+            "prior2capex": {
+              "type": "null"
+            },
+            "priorcapex": {
+              "type": "integer"
+            },
+            "mrcapex": {
+              "type": "null"
+            },
+            "prior2noi": {
+              "type": "null"
+            },
+            "priornoi": {
+              "type": "integer"
+            },
+            "mrnoi": {
+              "type": "null"
+            },
+            "loanprepayenddt": {
+              "type": "string"
+            },
+            "loanprepaytype": {
+              "type": "string"
+            },
+            "mrrevenue": {
+              "type": "null"
+            },
+            "publicationdt": {
+              "type": "string"
+            },
+            "loaddt": {
+              "type": "string"
+            },
+            "dl_timestamp": {
+              "type": "string"
+            },
+            "dltimestamp": {
+              "type": "string"
+            },
+            "mropexpense": {
+              "type": "null"
+            },
+            "uweffectivegrossincome": {
+              "type": "integer"
+            },
+            "physicaloccupancypct": {
+              "type": "number"
+            },
+            "uwncfdscr": {
+              "type": "number"
+            },
+            "propertyvalueperunit": {
+              "type": "number"
+            },
+            "propertyvalueasofdt": {
+              "type": "null"
+            },
+            "noincfindicator": {
+              "type": "string"
+            },
+            "curncfdebtyield": {
+              "type": ["number","null"]
+            },
+            "originationcapratencf": {
+              "type": "number"
+            },
+            "mrcapratencf": {
+              "type": "number"
+            },
+            "mrltv": {
+              "type": "number"
+            },
+            "mrvalueperunit": {
+              "type": "number"
+            },
+            "contribvalueamtperunit": {
+              "type": "number"
+            },
+            "contribvalueamt": {
+              "type": "integer"
+            },
+            "contribvaluedt": {
+              "type": "string"
+            },
+            "totalunits": {
+              "type": "integer"
+            },
+            "currscheduledbalend": {
+              "type": "number"
+            },
+            "mrvaluedt": {
+              "type": "string"
+            },
+            "mrvalue": {
+              "type": "integer"
+            },
+            "distribdt": {
+              "type": "string"
+            },
+            "loancollateralfootnote": {
+              "type": "null"
+            },
+            "greenfinancetype": {
+              "type": "null"
+            },
+            "totaldebtcurrentupb": {
+              "type": "integer"
+            },
+            "noteratefloorpct": {
+              "type": "null"
+            },
+            "noteratecappct": {
+              "type": "null"
+            },
+            "armmarginpct": {
+              "type": "null"
+            },
+            "armindex": {
+              "type": "null"
+            },
+            "taxescrow": {
+              "type": "string"
+            },
+            "crossedtransactionidloanno": {
+              "type": "null"
+            },
+            "crosscollateralized": {
+              "type": "string"
+            },
+            "uwncf": {
+              "type": "integer"
+            },
+            "uwreplacementreserves": {
+              "type": "integer"
+            },
+            "uwtotalopexpense": {
+              "type": "integer"
+            },
+            "uwncfdebtyieldpct": {
+              "type": "number"
+            },
+            "initialfixedterm": {
+              "type": "null"
+            },
+            "originterestonlyperiodmonths": {
+              "type": "integer"
+            },
+            "origloantermmonths": {
+              "type": "integer"
+            },
+            "notedt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "uwncfdscr_allin",
+            "uwncfdscrallin",
+            "issuanceltv",
+            "propertyvalue",
+            "monthlydebtservice",
+            "loanuniverseloanid",
+            "bloombergname",
+            "fannieloanid",
+            "groupid",
+            "prospectusloanid",
+            "currscheduledbalbegin",
+            "currentnoterate",
+            "maturitydt",
+            "netrate",
+            "totalschedpidue",
+            "liquidprepaymentdt",
+            "liquidprepaymentcode",
+            "actualbal",
+            "priorrevenue",
+            "prioropexpense",
+            "priorphyoccupancy",
+            "priorasofdt",
+            "prior2revenue",
+            "prior2phyoccupancy",
+            "prior2opexpense",
+            "prior2asofdt",
+            "mrphysicaloccupancy",
+            "mrstartasofdt",
+            "mrendasofdt",
+            "mrindicator",
+            "priorncf",
+            "priordscrncf",
+            "prior2ncf",
+            "prior2dscrncf",
+            "mrncf",
+            "mrdscrncf",
+            "totalloanamt",
+            "masterservicer",
+            "unitofmeasure",
+            "initpoolbalpct",
+            "originalupb",
+            "loanservicer",
+            "originterestrate",
+            "passthroughrate",
+            "interestaccrualmethod",
+            "seasoningmonths",
+            "origamortermmonths",
+            "issuancenoteratepct",
+            "uwnoidebtyieldpct",
+            "originationcapratenoi",
+            "curnoidebtyield",
+            "mrcapratenoi",
+            "prior2dscrnoi",
+            "priordscrnoi",
+            "mrdscrnoi",
+            "uwnoidscr",
+            "uwcapex",
+            "uwnoi",
+            "prior2capex",
+            "priorcapex",
+            "mrcapex",
+            "prior2noi",
+            "priornoi",
+            "mrnoi",
+            "loanprepayenddt",
+            "loanprepaytype",
+            "mrrevenue",
+            "publicationdt",
+            "loaddt",
+            "dl_timestamp",
+            "dltimestamp",
+            "mropexpense",
+            "uweffectivegrossincome",
+            "physicaloccupancypct",
+            "uwncfdscr",
+            "propertyvalueperunit",
+            "propertyvalueasofdt",
+            "noincfindicator",
+            "curncfdebtyield",
+            "originationcapratencf",
+            "mrcapratencf",
+            "mrltv",
+            "mrvalueperunit",
+            "contribvalueamtperunit",
+            "contribvalueamt",
+            "contribvaluedt",
+            "totalunits",
+            "currscheduledbalend",
+            "mrvaluedt",
+            "mrvalue",
+            "distribdt",
+            "loancollateralfootnote",
+            "greenfinancetype",
+            "totaldebtcurrentupb",
+            "noteratefloorpct",
+            "noteratecappct",
+            "armmarginpct",
+            "armindex",
+            "taxescrow",
+            "crossedtransactionidloanno",
+            "crosscollateralized",
+            "uwncf",
+            "uwreplacementreserves",
+            "uwtotalopexpense",
+            "uwncfdebtyieldpct",
+            "initialfixedterm",
+            "originterestonlyperiodmonths",
+            "origloantermmonths",
+            "notedt"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "match",
+    "total",
+    "offset",
+    "offsets",
+    "data"
+  ]
+}

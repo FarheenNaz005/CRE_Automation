@@ -1,0 +1,55 @@
+{
+  "filters": [
+    {
+      "datasource": [
+        "CMBS",
+        "Fannie Mae",
+        "Freddie Mac",
+        "Ginnie Mae",
+        "FHA",
+        "CRE CLO"
+      ]
+    },
+    {
+      "address": "477",
+      "search_type": "fuzzy",
+      "relation": "or"
+    },
+    {
+      "propname": "477",
+      "search_type": "fuzzy",
+      "relation": "or"
+    },
+    {
+      "loanname": "477",
+      "search_type": "fuzzy",
+      "relation": "or"
+    },
+    {
+      "ownername1": "477",
+      "search_type": "fuzzy",
+      "relation": "or"
+    }
+  ],
+  "fields": [
+    "bloombergname",
+    "propname",
+    "loanname",
+    "address",
+    "state",
+    "city",
+    "curbal",
+    "curloanbal",
+    "originator",
+    "latitude",
+    "longitude",
+    "loanuniversepropid",
+    "proptypecode",
+    "ownername1"
+  ],
+  "limit": 7,
+  "offset": 1,
+  "sort": {
+    "curbal": "desc"
+  }
+}

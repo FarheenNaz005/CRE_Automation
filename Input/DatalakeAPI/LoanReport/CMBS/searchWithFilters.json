@@ -1,0 +1,11 @@
+{
+    "filters": [{
+        "originator": "BOA"
+    }],
+    "limit": 10,
+    "offset": 1,
+    "sort": {
+        "masterloanidtrepp": "asc"
+    },
+    "fields": ["loanid", "dealid", "poolnum", "secmonaged", "curloanbal", "originator", "year"]
+}

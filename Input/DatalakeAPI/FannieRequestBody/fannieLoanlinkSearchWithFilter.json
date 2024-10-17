@@ -1,0 +1,10 @@
+{
+    "filters": [
+        {
+            "loanuniverseloanid": "524EA37683BC4E202DB38B810B354599",
+            "not_equals": false
+        }
+    ],
+    "fields": ["loanuniverseloanid", "loanlinksfannieid","bloombergname",
+    "fannieloanid", "loaddt"]
+}

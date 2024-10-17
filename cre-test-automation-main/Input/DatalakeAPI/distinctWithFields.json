@@ -1,0 +1,11 @@
+{
+    "fields": [{
+        "field_name": "datasource"
+    }, {
+        "field_name": "masterpropidtrepp"
+    }, {
+        "field_name": "city"
+    }, {
+        "field_name": "curdscr"
+    }]
+}

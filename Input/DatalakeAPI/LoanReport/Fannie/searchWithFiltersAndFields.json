@@ -1,0 +1,15 @@
+{
+    "filters": [
+        {
+            "bloombergname":"BS",
+            "search_type":"fuzzy"
+        },
+        {
+            "propertyvalue": {
+                "min":100,
+                "max": 1000000000
+            }
+        }
+    ],
+    "fields": ["issuanceltv","propertyvalue","monthlydebtservice","fannieloanid","bloombergname"]
+}

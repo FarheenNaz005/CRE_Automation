@@ -1,0 +1,16 @@
+{
+    "fields": [{
+        "field_name": "datasource",
+        "limit": 1000,
+        "sort": "asc"
+    }, {
+        "field_name": "masterpropidtrepp",
+        "limit": 200,
+        "sort": "desc"
+    }, {
+        "field_name": "city",
+        "limit": 1000
+    }, {
+        "field_name": "curdscr"
+    }]
+}

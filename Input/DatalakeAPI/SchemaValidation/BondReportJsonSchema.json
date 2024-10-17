@@ -1,0 +1,837 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "match": {
+      "type": "integer"
+    },
+    "total": {
+      "type": "integer"
+    },
+    "offset": {
+      "type": "integer"
+    },
+    "offsets": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "accrualdt": {
+              "type": "string"
+            },
+            "arabondbal": {
+              "type": "null"
+            },
+            "aracreditenhance": {
+              "type": "null"
+            },
+            "archivedt": {
+              "type": "string"
+            },
+            "becdr": {
+              "type": "null"
+            },
+            "bhbalance": {
+              "type": "integer"
+            },
+            "bhcumloss": {
+              "type": "integer"
+            },
+            "bhfipdt": {
+              "type": "string"
+            },
+            "bhinterest": {
+              "type": "number"
+            },
+            "bhintshortfallbalance": {
+              "type": "integer"
+            },
+            "bhloss": {
+              "type": "integer"
+            },
+            "bhlossperincomplete": {
+              "type": "null"
+            },
+            "bhpenalty": {
+              "type": "integer"
+            },
+            "bhprincipal": {
+              "type": "integer"
+            },
+            "bhtotalcash": {
+              "type": "number"
+            },
+            "bondcategory": {
+              "type": "null"
+            },
+            "bondgroup": {
+              "type": "null"
+            },
+            "bondid": {
+              "type": "string"
+            },
+            "bondtype": {
+              "type": "string"
+            },
+            "bondtypecaptype": {
+              "type": "string"
+            },
+            "bondtypefltrflag": {
+              "type": "string"
+            },
+            "bondtypeoverrideinttype": {
+              "type": "null"
+            },
+            "bondtypewacpassthruflag": {
+              "type": "string"
+            },
+            "businessday": {
+              "type": "integer"
+            },
+            "capchgflag": {
+              "type": "string"
+            },
+            "class": {
+              "type": "string"
+            },
+            "cmbxindex": {
+              "type": "null"
+            },
+            "cpnspread": {
+              "type": "integer"
+            },
+            "creditenhancecurtrustee": {
+              "type": "integer"
+            },
+            "cumbondlosspct": {
+              "type": "integer"
+            },
+            "curbondbal": {
+              "type": "integer"
+            },
+            "curbondcpn": {
+              "type": "number"
+            },
+            "curbondcpn_fv": {
+              "type": "null"
+            },
+            "curcreditenhance": {
+              "type": "null"
+            },
+            "curcreditthickness": {
+              "type": "null"
+            },
+            "curcurrencyexhrate": {
+              "type": "integer"
+            },
+            "curdistribdt": {
+              "type": "string"
+            },
+            "curhomecurrencybal": {
+              "type": "integer"
+            },
+            "curlowestrating": {
+              "type": "string"
+            },
+            "curnominalbondbal": {
+              "type": "integer"
+            },
+            "curratingdbrs": {
+              "type": "string"
+            },
+            "curratingdnp": {
+              "type": "string"
+            },
+            "curratingfitch": {
+              "type": "null"
+            },
+            "curratingkroll": {
+              "type": "string"
+            },
+            "curratingmoodys": {
+              "type": "string"
+            },
+            "curratingmorningstar": {
+              "type": "string"
+            },
+            "curratingrealpoint": {
+              "type": "null"
+            },
+            "curratingsnp": {
+              "type": "null"
+            },
+            "cusip": {
+              "type": "string"
+            },
+            "dealid": {
+              "type": "integer"
+            },
+            "defeasecreditenhance": {
+              "type": "null"
+            },
+            "delaydays": {
+              "type": "integer"
+            },
+            "denomcurrency": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "factor": {
+              "type": "integer"
+            },
+            "floaterindex": {
+              "type": "null"
+            },
+            "floattype": {
+              "type": "null"
+            },
+            "govteligiblitytype": {
+              "type": "null"
+            },
+            "haswrdnfunds": {
+              "type": "string"
+            },
+            "holidayschedule": {
+              "type": "null"
+            },
+            "intaccrued": {
+              "type": "number"
+            },
+            "intshortacc": {
+              "type": "string"
+            },
+            "iscomponent": {
+              "type": "integer"
+            },
+            "isin": {
+              "type": "null"
+            },
+            "isio": {
+              "type": "null"
+            },
+            "israkebondid": {
+              "type": "string"
+            },
+            "isrestricted": {
+              "type": "string"
+            },
+            "lowestratingordinal": {
+              "type": "integer"
+            },
+            "masterbondidtrepp": {
+              "type": "string"
+            },
+            "isprivateflag": {
+              "type": "integer"
+            },
+            "privtype": {
+              "type": "string"
+            },
+            "dealcategory": {
+              "type": "string"
+            },
+            "privtype_es": {
+              "type": "string"
+            },
+            "dealcategory_es": {
+              "type": "string"
+            },
+            "maturitydt": {
+              "type": "string"
+            },
+            "month": {
+              "type": "string"
+            },
+            "nextresetdt": {
+              "type": "null"
+            },
+            "origlowestrating": {
+              "type": "string"
+            },
+            "origratingdbrs": {
+              "type": "string"
+            },
+            "origratingdnp": {
+              "type": "string"
+            },
+            "origratingfitch": {
+              "type": "string"
+            },
+            "origratingkroll": {
+              "type": "string"
+            },
+            "origratingmoodys": {
+              "type": "string"
+            },
+            "origratingmorningstar": {
+              "type": "string"
+            },
+            "origratingrealpoint": {
+              "type": "null"
+            },
+            "origratingsnp": {
+              "type": "string"
+            },
+            "ratecap": {
+              "type": "null"
+            },
+            "ratecap_fv": {
+              "type": "null"
+            },
+            "ratedmaturitydt": {
+              "type": "string"
+            },
+            "ratingwatchdbrs": {
+              "type": "null"
+            },
+            "ratingwatchfitch": {
+              "type": "null"
+            },
+            "ratingwatchkroll": {
+              "type": "string"
+            },
+            "ratingwatchmoodys": {
+              "type": "null"
+            },
+            "ratingwatchmorningstar": {
+              "type": "null"
+            },
+            "ratingwatchsnp": {
+              "type": "null"
+            },
+            "repositorytype": {
+              "type": "null"
+            },
+            "residualbondflag": {
+              "type": "string"
+            },
+            "rownumber": {
+              "type": "integer"
+            },
+            "secbondbal": {
+              "type": "integer"
+            },
+            "seccreditenhance": {
+              "type": "number"
+            },
+            "seccreditthickness": {
+              "type": "number"
+            },
+            "sechomecurrencybal": {
+              "type": "integer"
+            },
+            "secnominalbondbal": {
+              "type": "integer"
+            },
+            "seniorsubordlevelsubtype": {
+              "type": "string"
+            },
+            "shortcusip": {
+              "type": "string"
+            },
+            "sizeprice": {
+              "type": "null"
+            },
+            "sublevel": {
+              "type": "integer"
+            },
+            "treppprice": {
+              "type": "null"
+            },
+            "trnnumber": {
+              "type": "integer"
+            },
+            "usefloatvar": {
+              "type": "integer"
+            },
+            "vintagecategory": {
+              "type": "integer"
+            },
+            "vintageyearly": {
+              "type": "string"
+            },
+            "year": {
+              "type": "string"
+            },
+            "dealname": {
+              "type": "string"
+            },
+            "ratingoutlookfitch": {
+              "type": "null"
+            },
+            "ratingoutlookmorningstar": {
+              "type": "null"
+            },
+            "bloombergname": {
+              "type": "string"
+            },
+            "primarykey": {
+              "type": "string"
+            },
+            "dscrlessthan1": {
+              "type": "null"
+            },
+            "msapercent1to25": {
+              "type": "null"
+            },
+            "msapercent26to50": {
+              "type": "null"
+            },
+            "percent30dq": {
+              "type": "integer"
+            },
+            "msapercent51plus": {
+              "type": "null"
+            },
+            "percent5yrterm": {
+              "type": "null"
+            },
+            "percent60dq": {
+              "type": "integer"
+            },
+            "percent7yrterm": {
+              "type": "null"
+            },
+            "percent90dq": {
+              "type": "integer"
+            },
+            "cmmbasecasecoveragepercent": {
+              "type": "null"
+            },
+            "cmmbasecaseexpectedlosspercent": {
+              "type": "null"
+            },
+            "cmmstresscoveragepercent": {
+              "type": "null"
+            },
+            "cmmstressexpectedlosspercent": {
+              "type": "null"
+            },
+            "fcldqpercent": {
+              "type": "integer"
+            },
+            "defeasedpercent": {
+              "type": "integer"
+            },
+            "ltvpercentgreaterthanequalto75": {
+              "type": "null"
+            },
+            "ltvpercentgreaterthanequalto80": {
+              "type": "null"
+            },
+            "msanapercent": {
+              "type": "null"
+            },
+            "nonperfballdqpercent": {
+              "type": "integer"
+            },
+            "perfsspercent": {
+              "type": "null"
+            },
+            "chpercent": {
+              "type": "integer"
+            },
+            "hcpercent": {
+              "type": "integer"
+            },
+            "inpercent": {
+              "type": "integer"
+            },
+            "hotelpercent": {
+              "type": "integer"
+            },
+            "pmfpercent": {
+              "type": "integer"
+            },
+            "mhpercent": {
+              "type": "integer"
+            },
+            "mupercent": {
+              "type": "integer"
+            },
+            "ofpercent": {
+              "type": "integer"
+            },
+            "otpercent": {
+              "type": "integer"
+            },
+            "rtpercent": {
+              "type": "integer"
+            },
+            "sspercent": {
+              "type": "integer"
+            },
+            "unpercent": {
+              "type": "integer"
+            },
+            "whpercent": {
+              "type": "integer"
+            },
+            "reodqpercent": {
+              "type": "integer"
+            },
+            "singletenantpercent": {
+              "type": "null"
+            },
+            "top10loanpercent": {
+              "type": "null"
+            },
+            "top15loanpercent": {
+              "type": "null"
+            },
+            "top5loanpercent": {
+              "type": "null"
+            },
+            "toppropertytype": {
+              "type": "string"
+            },
+            "toppropertytypepercent": {
+              "type": "null"
+            },
+            "topstate": {
+              "type": "null"
+            },
+            "topstatepercent": {
+              "type": "null"
+            },
+            "dqpercent": {
+              "type": "null"
+            },
+            "undqpercent": {
+              "type": "integer"
+            },
+            "watchlistpercent": {
+              "type": "null"
+            },
+            "propertytype2nd": {
+              "type": "null"
+            },
+            "state2nd": {
+              "type": "null"
+            },
+            "propertytype3rd": {
+              "type": "null"
+            },
+            "state3rd": {
+              "type": "null"
+            },
+            "cumulativeappraisalreductionamount": {
+              "type": "integer"
+            },
+            "cumulativeaseramount": {
+              "type": "null"
+            },
+            "currentcollateralbalance": {
+              "type": "integer"
+            },
+            "currentloancount": {
+              "type": "integer"
+            },
+            "currentwac": {
+              "type": "null"
+            },
+            "ioloanpct": {
+              "type": "null"
+            },
+            "mostrecentaser": {
+              "type": "null"
+            },
+            "partialioloanpercent": {
+              "type": "null"
+            },
+            "specialservicingpercent": {
+              "type": "null"
+            },
+            "percent2ndpropertytype": {
+              "type": "null"
+            },
+            "percent2ndstate": {
+              "type": "null"
+            },
+            "percent3rdpropertytype": {
+              "type": "null"
+            },
+            "percent3rdstate": {
+              "type": "null"
+            },
+            "ioonlypercent": {
+              "type": "null"
+            },
+            "mfdirecteddefeasedpercent": {
+              "type": "null"
+            },
+            "mfdirecteddqpercent": {
+              "type": "null"
+            },
+            "mfdirectedperfsspercent": {
+              "type": "null"
+            },
+            "partialiobalpercent": {
+              "type": "null"
+            },
+            "top10loanbalpercent": {
+              "type": "null"
+            },
+            "top15loanbalpercent": {
+              "type": "null"
+            },
+            "top5loanbalpercent": {
+              "type": "null"
+            },
+            "msapercentbal1to25": {
+              "type": "null"
+            },
+            "msapercentbal26to50": {
+              "type": "null"
+            },
+            "msapercentbal51plus": {
+              "type": "null"
+            },
+            "msanabalpercent": {
+              "type": "null"
+            },
+            "performingbalspecialservicepercent": {
+              "type": "null"
+            },
+            "bankruptcybalance": {
+              "type": "null"
+            },
+            "rmspropcoverageprop": {
+              "type": "null"
+            },
+            "rmsbicoverageprop": {
+              "type": "null"
+            },
+            "rmspropcoveragebal": {
+              "type": "null"
+            },
+            "rmsbicoveragebal": {
+              "type": "null"
+            },
+            "rmsproprollup": {
+              "type": "null"
+            },
+            "rmsbirollup": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "accrualdt",
+            "arabondbal",
+            "aracreditenhance",
+            "archivedt",
+            "becdr",
+            "bhbalance",
+            "bhcumloss",
+            "bhfipdt",
+            "bhinterest",
+            "bhintshortfallbalance",
+            "bhloss",
+            "bhlossperincomplete",
+            "bhpenalty",
+            "bhprincipal",
+            "bhtotalcash",
+            "bondcategory",
+            "bondgroup",
+            "bondid",
+            "bondtype",
+            "bondtypecaptype",
+            "bondtypefltrflag",
+            "bondtypeoverrideinttype",
+            "bondtypewacpassthruflag",
+            "businessday",
+            "capchgflag",
+            "class",
+            "cmbxindex",
+            "cpnspread",
+            "creditenhancecurtrustee",
+            "cumbondlosspct",
+            "curbondbal",
+            "curbondcpn",
+            "curbondcpn_fv",
+            "curcreditenhance",
+            "curcreditthickness",
+            "curcurrencyexhrate",
+            "curdistribdt",
+            "curhomecurrencybal",
+            "curlowestrating",
+            "curnominalbondbal",
+            "curratingdbrs",
+            "curratingdnp",
+            "curratingfitch",
+            "curratingkroll",
+            "curratingmoodys",
+            "curratingmorningstar",
+            "curratingrealpoint",
+            "curratingsnp",
+            "cusip",
+            "dealid",
+            "defeasecreditenhance",
+            "delaydays",
+            "denomcurrency",
+            "description",
+            "factor",
+            "floaterindex",
+            "floattype",
+            "govteligiblitytype",
+            "haswrdnfunds",
+            "holidayschedule",
+            "intaccrued",
+            "intshortacc",
+            "iscomponent",
+            "isin",
+            "isio",
+            "israkebondid",
+            "isrestricted",
+            "lowestratingordinal",
+            "masterbondidtrepp",
+            "isprivateflag",
+            "privtype",
+            "dealcategory",
+            "privtype_es",
+            "dealcategory_es",
+            "maturitydt",
+            "month",
+            "nextresetdt",
+            "origlowestrating",
+            "origratingdbrs",
+            "origratingdnp",
+            "origratingfitch",
+            "origratingkroll",
+            "origratingmoodys",
+            "origratingmorningstar",
+            "origratingrealpoint",
+            "origratingsnp",
+            "ratecap",
+            "ratecap_fv",
+            "ratedmaturitydt",
+            "ratingwatchdbrs",
+            "ratingwatchfitch",
+            "ratingwatchkroll",
+            "ratingwatchmoodys",
+            "ratingwatchmorningstar",
+            "ratingwatchsnp",
+            "repositorytype",
+            "residualbondflag",
+            "rownumber",
+            "secbondbal",
+            "seccreditenhance",
+            "seccreditthickness",
+            "sechomecurrencybal",
+            "secnominalbondbal",
+            "seniorsubordlevelsubtype",
+            "shortcusip",
+            "sizeprice",
+            "sublevel",
+            "treppprice",
+            "trnnumber",
+            "usefloatvar",
+            "vintagecategory",
+            "vintageyearly",
+            "year",
+            "dealname",
+            "ratingoutlookfitch",
+            "ratingoutlookmorningstar",
+            "bloombergname",
+            "primarykey",
+            "dscrlessthan1",
+            "msapercent1to25",
+            "msapercent26to50",
+            "percent30dq",
+            "msapercent51plus",
+            "percent5yrterm",
+            "percent60dq",
+            "percent7yrterm",
+            "percent90dq",
+            "cmmbasecasecoveragepercent",
+            "cmmbasecaseexpectedlosspercent",
+            "cmmstresscoveragepercent",
+            "cmmstressexpectedlosspercent",
+            "fcldqpercent",
+            "defeasedpercent",
+            "ltvpercentgreaterthanequalto75",
+            "ltvpercentgreaterthanequalto80",
+            "msanapercent",
+            "nonperfballdqpercent",
+            "perfsspercent",
+            "chpercent",
+            "hcpercent",
+            "inpercent",
+            "hotelpercent",
+            "pmfpercent",
+            "mhpercent",
+            "mupercent",
+            "ofpercent",
+            "otpercent",
+            "rtpercent",
+            "sspercent",
+            "unpercent",
+            "whpercent",
+            "reodqpercent",
+            "singletenantpercent",
+            "top10loanpercent",
+            "top15loanpercent",
+            "top5loanpercent",
+            "toppropertytype",
+            "toppropertytypepercent",
+            "topstate",
+            "topstatepercent",
+            "dqpercent",
+            "undqpercent",
+            "watchlistpercent",
+            "propertytype2nd",
+            "state2nd",
+            "propertytype3rd",
+            "state3rd",
+            "cumulativeappraisalreductionamount",
+            "cumulativeaseramount",
+            "currentcollateralbalance",
+            "currentloancount",
+            "currentwac",
+            "ioloanpct",
+            "mostrecentaser",
+            "partialioloanpercent",
+            "specialservicingpercent",
+            "percent2ndpropertytype",
+            "percent2ndstate",
+            "percent3rdpropertytype",
+            "percent3rdstate",
+            "ioonlypercent",
+            "mfdirecteddefeasedpercent",
+            "mfdirecteddqpercent",
+            "mfdirectedperfsspercent",
+            "partialiobalpercent",
+            "top10loanbalpercent",
+            "top15loanbalpercent",
+            "top5loanbalpercent",
+            "msapercentbal1to25",
+            "msapercentbal26to50",
+            "msapercentbal51plus",
+            "msanabalpercent",
+            "performingbalspecialservicepercent",
+            "bankruptcybalance",
+            "rmspropcoverageprop",
+            "rmsbicoverageprop",
+            "rmspropcoveragebal",
+            "rmsbicoveragebal",
+            "rmsproprollup",
+            "rmsbirollup"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "match",
+    "total",
+    "offset",
+    "offsets",
+    "data"
+  ]
+}

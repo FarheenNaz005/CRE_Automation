@@ -1,0 +1,10 @@
+{
+    "filters": [
+        {
+            "loanuniversepropid": "7922787BCC871AAD2E6382C6D48E2D50",
+            "not_equals": false
+        }
+    ],
+    "fields": ["loanuniversepropid", "bloombergname","fanniepropertyid",
+    "totalunits", "mrvalue", "loaddt"]
+}

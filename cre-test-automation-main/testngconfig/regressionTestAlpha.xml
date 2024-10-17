@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Test_Scenarios" verbose="3" parallel="false">
+	<parameter name="Execute" value="Cloud" />
+	<parameter name="remoteurl"
+		value="https://anish_ohri:ke0cNdOipKNVGKK6fZpNaRS2mZgWV8Yq8RB8N1HSODZBfEro1g@hub.lambdatest.com/wd/hub" />
+	<parameter name="environment" value="Alpha" />
+	<parameter name="application" value="CRE" />
+	<parameter name="opsgenieAlert" value="No" />
+	<test name="HomePage Validation" preserveorder="true">
+		<groups>
+			<dependencies>
+				<group name="regression" depends-on="logInTest" />
+			</dependencies>
+		</groups>
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:80.0;name:Home Page Validation;build:CRE Regression Staging;console:true;tunnel:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>3" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.CREHomePage" />
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test>
+	<test name="Search and Data Load Verify" preserveorder="true">
+		<groups>
+			<dependencies>
+				<group name="regression" depends-on="logInTest" />
+			</dependencies>
+		</groups>
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:80.0;name:Property Page Load Verification;build:CRE Regression Staging;console:true;tunnel:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>3" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.PropertyPageFunctionality">
+				<methods>
+					<exclude name="verify2PropertyValuation" />
+				</methods>
+			</class>
+			<class name="com.newdemo.steps.PropertyDetailPageTest" />
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test>
+	<test name="Portfolio Functionality Verify" preserveorder="true">
+		<groups>
+			<dependencies>
+				<group name="regression" depends-on="logInTest" />
+			</dependencies>
+		</groups>
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:80.0;name:Portfolio 
+		Functionality Verify;build:CRE Regression Staging;console:true;tunnel:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>3" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.CREsmallsearchnportfolio" />
+			<class name="com.newdemo.steps.CREpropertyEvaluation" />
+			<class name="com.newdemo.steps.ManagePortfolioFunctionality" />
+			<class name="com.newdemo.steps.CalculatorFunctionalityTest" />
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test>
+	<test name="verify CRE Listing Page Functionality"
+		preserveorder="true">
+		<groups>
+			<dependencies>
+				<group name="regression" depends-on="logInTest" />
+			</dependencies>
+		</groups>
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:80.0;name:verify CRE Listing Page Functionality;build:CRE Regression Staging;console:true;tunnel:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>3" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.CREListingFunctionality" />
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test>
+	<test name="verify CRE Deal List Functionality"
+		preserveorder="true">
+		<groups>
+			<dependencies>
+				<group name="regression" depends-on="logInTest" />
+			</dependencies>
+		</groups>
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:80.0;name:verify CRE Deal List Functionality;build:CRE Regression Staging;console:true;tunnel:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>3" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.DealListFunctionality" />
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test>
+	<test name="verify CRE Alert Functionality" preserveorder="true">
+		<groups>
+			<dependencies>
+				<group name="regression" depends-on="logInTest" />
+			</dependencies>
+		</groups>
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:80.0;name:verify CRE Alert Functionality;build:CRE Regression Staging;console:true;tunnel:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>3" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.AlertFunctionality" />
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test>
+
+	<test name="Verify Company Exposure, Hotel and Tenant Report"
+		preserveorder="true">
+		<groups>
+			<dependencies>
+				<group name="regression" depends-on="logInTest" />
+			</dependencies>
+		</groups>
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:80.0;name:Verify Company Exposure, Hotel and Tenant Report;build:CRE Regression Staging;console:true;tunnel:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>3" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.StatsPageTest" />
+			<class name="com.newdemo.steps.CompanyExposureTest" />
+			<class name="com.newdemo.steps.HotelSnapshotTest" />
+			<class name="com.newdemo.steps.TenantReportTest" />
+			<class name="com.newdemo.steps.TrendsTest" />
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test>
+
+	<test name="Verify New Issuance" preserveorder="true">
+		<groups>
+			<dependencies>
+				<group name="regression" depends-on="logInTest" />
+			</dependencies>
+		</groups>
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:80.0;name:Verify New Issuance;build:CRE Regression Staging;console:true;tunnel:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>3" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.NewIssuanceTest" />
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test>
+
+	<test name="Saved Search Functionality" preserveorder="true">
+		<groups>
+			<dependencies>
+				<group name="regression" depends-on="logInTest" />
+			</dependencies>
+		</groups>
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:80.0;name:Saved Search Validation;build:CRE Regression Staging;console:true;tunnel:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>3" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.SavedSearchFunctionalityTest" />
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test>
+	<test name="Single Property Valuation" preserveorder="true">
+		<groups>
+			<dependencies>
+				<group name="regression" depends-on="logInTest" />
+			</dependencies>
+		</groups>
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:80.0;name:Saved Search Validation;build:CRE Regression Staging;console:true;tunnel:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>3" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.SinglePropertyValuationTest" />
+			<class name="com.newdemo.steps.ValuationManagerFunctionality" />
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test>
+	
+		<test name="verify CRE new Listing Page Functionality"
+		preserveorder="true">
+		<groups>
+			<dependencies>
+				<group name="regression" depends-on="logInTest" />
+			</dependencies>
+		</groups>
+		<parameter name="capabilities"
+			value="browserName:chrome;platform:Windows 10;version:80.0;name:verify CRE Listing Page Functionality;build:CRE Regression Staging;console:true;tunnel:true;resolution:1440x900" />
+		<classes>
+			<parameter name="ParameterNValue" value="InputDataRow=>3" />
+			<class name="com.newdemo.steps.LogInTest" />
+			<class name="com.newdemo.steps.CRENewPageListingFunctionality" >
+				<methods>
+					<include name="downloadandverifyview" />
+				</methods>
+			</class>
+			<class name="com.newdemo.steps.LogOutTest" />
+		</classes>
+	</test>
+
+	<listeners>
+		<listener
+			class-name="com.newdemo.framework.listner.TestResultListener" />
+	</listeners>
+</suite>

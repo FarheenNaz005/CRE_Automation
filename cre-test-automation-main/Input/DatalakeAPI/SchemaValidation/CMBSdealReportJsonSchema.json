@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "match": {
+      "type": "integer"
+    },
+    "total": {
+      "type": "integer"
+    },
+    "offset": {
+      "type": "integer"
+    },
+    "offsets": {
+      "type": "integer"
+    },
+    "data": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "dealname": {
+              "type": "string"
+            },
+            "staticpool": {
+              "type": "string"
+            },
+            "bloombergname": {
+              "type": "string"
+            },
+            "businessdaytype": {
+              "type": "integer"
+            },
+            "dealcategory": {
+              "type": "string"
+            },
+            "underwriter": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "dealname",
+            "staticpool",
+            "bloombergname",
+            "businessdaytype",
+            "dealcategory",
+            "underwriter"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "match",
+    "total",
+    "offset",
+    "offsets",
+    "data"
+  ]
+}

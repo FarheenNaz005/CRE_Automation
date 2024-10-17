@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="DL API Test" verbose="3" parallel="tests"
+	thread-count="1">
+
+
+	<parameter name="BaseUrl" value="https://api-qa.trepp.com/v2.0" />
+	<test name="OAuth" preserveorder="true">
+		<classes>
+			<class name="com.newdemo.steps.DLAPIOAuth" />
+			<class name="com.newdemo.steps.DLAPISearch" />
+			<class name="com.newdemo.steps.DLAPIDistinct" />
+			<class name="com.newdemo.steps.DLAPISearchByIdentifier" />
+			<class name="com.newdemo.steps.DLAPILoanReportCMBS" />
+			<class name="com.newdemo.steps.DLAPILoanReportFannie" />
+			<class name="com.newdemo.steps.DLAPIDealReportCMBS" />
+			<class name="com.newdemo.steps.DLAPIBondReportCMBS" />
+			<class name="com.newdemo.steps.DLAPIDataValidationFannie" />
+		</classes>
+	</test>
+</suite>

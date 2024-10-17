@@ -1,0 +1,32 @@
+{
+  "filters": [
+    {
+      "datasource": [
+        "CMBS",
+        "Fannie Mae",
+        "Freddie Mac",
+        "Ginnie Mae",
+        "FHA",
+        "CRE CLO"
+      ]
+    },
+    {
+      "state": [
+        "MT"
+      ]
+    }
+  ],
+  "fields": [
+   
+    "propname",
+    "loanname",
+    "address",
+    "state",
+    "city"
+  ],
+  "limit": 10,
+  "offset": 1,
+  "sort": {
+    "datasource": "asc"
+  }
+}
